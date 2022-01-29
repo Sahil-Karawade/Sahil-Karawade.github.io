@@ -1,5 +1,5 @@
 ## Welcome to GitHub Pages
-Hi! I'm Sahil Karawade,currently enrolled in Mathematics and Computing programe at Manipal Academy of Higher Education.
+
 
 You can use the [editor on GitHub](https://github.com/Sahil-Karawade/Sahil-Karawade.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
