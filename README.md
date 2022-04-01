@@ -2,9 +2,10 @@
 
 
 You can use the [editor on GitHub](https://github.com/Sahil-Karawade/Sahil-Karawade.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-(https://github.com/Sahil-Karawade/Sahil-Karawade.github.io/blob/a76858ed338f762414c3e284489aa66676193154/README.md)
+[editor](https://github.com/Sahil-Karawade/Sahil-Karawade.github.io/blob/a76858ed338f762414c3e284489aa66676193154/README.md)
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
+[Prime spectrum](https://sahil-karawade.github.io/primespectrum.html)
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
