@@ -1,0 +1,823 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.5.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>\documentclass[12pt,a4papaper]{report}
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{amssymb} 
+\usepackage[thmmarks]{ntheorem}
+\usepackage{theoremref}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{tikz-cd} 
+\theoremheaderfont{\bfseries} 
+\theorembodyfont{\normalfont} \theoremseparator{:} 
+\newtheorem*{proof}{Proof}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{remark}{Remark}
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{oubraces}
+\usepackage{mathtools}
+\newcommand\ntime{n_{\mathit{time}}} \newcommand\nbeam{n_{\mathit{beam}}} \newcommand\nelem{n_{\mathit{elem}}} \newcommand\round{\mathop{round}}
+\newcommand{\textoverline}[1]{$\overline{\mbox{#1}}$}
+\newcommand{\properideal}{ \mathrel{\ooalign{$\lneq$\cr\raise.22ex\hbox{$\lhd$}\cr}}}
+\usepackage{multicol}
+\renewcommand{\thesection}{\arabic{section}}
+\AtBeginDocument{\renewcommand{\bibname}{References}}
+
+\begin{document}
+\begin{titlepage}
+	\begin{center}
+		\vspace{1cm}
+		\normalsize
+		\textbf{PROJECT REPORT}\\ 
+		\vspace{0.1cm}
+		ON\\
+		\vspace{0.05cm}
+		\Large
+		\textbf{Equivalence of Categories between Category of Affine Variety over $k$ and Category of finitely generated integral domain over $k$}
+		
+		\vspace{0.1cm}
+		\Large
+		submitted by
+		
+		\vspace{0.5cm}
+		\Large
+		\textbf{Sahil Karawade}\\
+		\textbf{REG.NO:203102010}
+		
+		\vspace{0.5cm}
+		in partial fulfilment of the requirement\\
+		for the award of degree\\
+		\vspace{0.2cm}
+		\Large
+		\textbf{MASTER OF SCIENCE}\\
+		in\\
+		\Large
+		\textbf{APPLIED MATHEMATICS AND COMPUTING}\\
+		\vspace{0.2cm}
+		under the guidance of\\
+		\Large
+		\textbf{Dr.Harikrishnan Panackal}
+		\vspace{0.8cm}
+		
+		\includegraphics[width=0.4\textwidth]{image.png}\\
+		Submitted to\\
+		\textbf{Department Of Science}\\
+		\textbf{Manipal Academy Of Higher Education}	
+	\end{center}
+\end{titlepage}
+\newpage
+\includepdf[scale=0.89,offset=1mm 25mm,page=1,pagecommand={\thispagestyle{plain}}]{certificate (2).pdf}
+\begin{center}
+\Huge
+\textbf{ACKNOWLEDGEMENT}
+\end{center}
+\vspace{2cm}
+I take this opportunity with great pleasure to acknowledge the contribution of all those who were directly instrumental in leading to the development of this project to a phase in which it is visible to us today. \\ I wish to thank my project guide Dr.Harikrishnan Panackal, Associate\\ Professor Senior,Department Of Mathematics, Manipal Academy Of Higher\\ Education, for patiently helping me throughout the project.\\
+I would like to express my gratitude to Dr.Sudhakara G, Head of Department, Department of Mathematics,\ for his support.\\ \\
+\hspace*{\fill}
+\large
+Sahil Karawade
+
+\tableofcontents
+
+\newpage
+	\noindent
+	\section{Introduction}
+	In Algebraic Geometry we study the relationship between Geometric objects and Algebraic objects.So throughout we will try to construct a dictionary between Algebraic and Geometric objects.And in the end we prove the Equivalence of categories between the Category of Affine Variety over $k$ and Category of finitely generated integral domain over $k$.  \\
+	We first define univariate polynomial ring:-
+\begin{definition}	Let $R$ be a ring. Then,
+	\[R[X]=\{a_0+a_1X_1+a_2X_2^{2}+\cdots +a_nX_n^{n}| \ a_i\in R \ \text{and} \ a_n\neq 0\}\]
+\end{definition}
+	Similarly we can consider $R[X_1,...,X_n]$ as $R[X_1,...X_{n-1}][X_n]$\\
+	i.e. Polynomial ring with indeterminate $X_n$ and coefficient from polynomial in ring $R[X_1,...,X_{n-1}]$
+	\begin{definition}\thlabel{Z(S)}
+		We define zero set  or zero locus of set of polynomial $S$ in $R[X_1,...,X_n]$ as follows:-\\
+		$Z(S)=\{ (a_1,...,a_n)\in R^n \ | \ f(a_1,...,a_n)=0 \ \forall f \in S \}$ \end{definition}
+	\begin{example}
+	 An affine plane curve is the zero set of one complex polynomial in the 
+	complex plane $\mathbb{C}^2$.
+	\end{example}
+	It can happen that $Z(S)$ is empty.
+	\begin{example}
+		Let $R=\mathbb{R}$ and consider single equation in one variable $f(x)=x^2+1$ then zero set is $\varnothing $ over $\mathbb{R}$\end{example}
+	We don't want $Z(S)$ to be empty.
+	And Hilbert's Nullstellenzats  gives us the assurance that Z(S) won't be empty when working over Algebraically closed field.\\
+	\textbf{So throughtout we will be working over algebraically closed field $k$}.
+	
+	Further,on the Geometric side we don't want vector space structure of $k^n$. We just want points of $k^n$ on which we can define topology and work with continuous functions.\\
+	So $k^n+$ Zariski topology is Affine n-space which we have shown in section \ref{Zariski Topology} .
+	\noindent
+	\section{Commutative Algebra}
+	\noindent
+	\begin{definition}[Minimal Prime Ideal]
+	A prime ideal $\mathfrak{p}$ is said to be minimal prime ideal over an ideal $I$ if it is minimal among all prime ideals containing $I$.(If $I$ is prime then $I$ is the only minimal prime over it).\end{definition}
+	\begin{definition}[Krull dimension]
+	Krull dimension of ring $R$ is the supremum of the lengths of chains of prime ideals in $R$. Denoted by dim$R$.\end{definition}
+	Now, $R$ be a ring and $I$ be prime ideal then codim$I$(also called height of $I$ or rank$I$) is by definition dimension of local ring $R_I$.\\
+	If $I$ is not prime then we define codim$I$ to be minimum of the codimensions of primes containing $I$.
+	\\
+\begin{lemma}[Nakayama Lemma]\thlabel{Nakayama}
+	Let $M$ be finitely generated $R$-module and $I$ be an ideal in Jacobson radical or $J(R)$ such that $IM=M$ then $M=0$.
+\begin{proof} By proposition 2.6[p.21] in \cite{Atiyah}.
+
+\end{proof}
+ \end{lemma}
+	\begin{definition}[Artin ring]
+	A ring $R$ is called Artinian if it satisfies Descending Chain Condition on ideals.
+\end{definition}
+\begin{theorem}\thlabel{th2.1}
+	If $R$ is Artinian integral domain then $R$ is a field.
+	\begin{proof}
+		Let $x\in R$ be non-zero element.\ Consider\\ $(x)\supseteq (x^2)\supseteq \cdots$ which stabilizes, so there exists $m\in \mathbb{Z^{+}}$ such that for $n\geq m$ $(x^{n})=(x^{n+1})$.\ Therefore $x^n=ax^{n+1}$ for some $a\in R$.\ Since $R$ is integral domain we have $1=ax$ and the result follows.
+	\end{proof}
+	\end{theorem}
+\begin{corollary}
+	In Artinian ring every prime ideal is maximal.
+\begin{proof} By \thref{th2.1} and the fact that $R/p$ is a field if and only if $p$ is maximal ideal.\end{proof}
+
+\end{corollary}
+\begin{theorem}\thlabel{Artin ring}
+	Ring $R$ is Artinian if and only if it is Noetherian with krull dimension zero.
+\begin{proof} Theorem 8.5[p.90] in \cite{Atiyah}.
+\end{proof}
+\end{theorem}
+        \begin{definition}[Localization at prime ideal]
+		Define multiplicative set $S=R\setminus \mathfrak{p}$ where $\mathfrak{p}$ is prime.
+		($1\in S$ and for $a,b\in S$ then $ab\in S$).
+		$S^{-1}R$ is localization denoted by $R_\mathfrak{p}$. $R_\mathfrak{p}$ is a local ring and is called local ring of $R$ at $\mathfrak{p}$.
+       
+   \end{definition}
+\noindent
+	$f:R\longrightarrow R_\mathfrak{p}$ definded as $f(r)=\frac{r}{1}$\\
+	let $\mathfrak{p}$ be prime ideal of $R$.\\
+	$\mathfrak{p}R_\mathfrak{p}=\mathfrak{p}^{e}=\biggl\{\sum\limits_\text{finite}f(x_i)s_i | s_i\in R_\mathfrak{p}, x_i\in \mathfrak{p}\biggr \}=\{\frac{p_i}{b}| \ p_i\in \mathfrak{p}, b\in S\}$\\
+	\begin{lemma}
+	$\mathfrak{p}R_\mathfrak{p}$ is maximal ideal of $R_\mathfrak{p}$.
+	\begin{proof} Suppose $I$ is an ideal of $R_\mathfrak{p}$ with $\mathfrak{p}R_\mathfrak{p}\subsetneq I$.Then $I$ must contain unit because $\mathfrak{p}R_\mathfrak{p}$ contains all non-units. Further if \\ $m\subseteq \mathfrak{p}R_\mathfrak{p}$ and $m$ is maximal then $m=\mathfrak{p}R_\mathfrak{p}$ and if $m$ is not contained in $\mathfrak{p}R_\mathfrak{p}$ then $m$ contains units.\ Hence,\ $R_\mathfrak{p}$ is local ring. \end{proof} 
+\end{lemma}
+	\begin{definition}[Symbolic Power]\thlabel{Symbolic Power}
+	Let $p$ be prime ideal in ring $R$ and $n\in \mathbb{N}$. The following ideal is called $n^{th}$ symbolic power of $p$.
+	\[p^{(n)}=p^nR_p\cap R=\{ a\in \mathbb{R}| \ ab\in p^n \ \text{for some} \ b\in R\setminus p \}\]
+\end{definition}
+\begin{remark}\thlabel{supset} For prime ideal $p$ we have $p^{(1)}\supseteq p^{(2)}\supseteq p^{(3)}\cdots$ \end{remark}
+	\begin{lemma}\thlabel{symbolic 1} $p^n\subseteq p^{(n)}\subseteq p$
+	\begin{proof}
+	Let $a\in p^n$ then $a\cdot 1\in p^n \implies a\in p^{(n)} \implies p^n\subseteq p^{(n)}$.\\
+	$a\in p^{(n)} \implies ab \in p^n (b\in S) \implies ab\in p \implies a \in p$\end{proof} \qed \end{lemma} 
+	\begin{lemma} $p^{(n)}$ is $p-$primary.
+	\begin{proof}
+	Since $p$ is prime, $\sqrt{p}=p$.\ Therefore
+	 by above lemma $\sqrt{p^n}=p\subseteq \sqrt{p^{(n)}}\subseteq \sqrt{p}$.It implies $\sqrt{p^{(n)}}=p$.\\
+	To show $p^{(n)}$ is primary\\
+	let $ab\in p^{(n)}$ or $abx\in p^n$ for $x\in R\setminus p$\\
+	i.e. To show $a\in p^{(n)} \ or \ b^m\in p^{(n)}$\\
+	If $b\notin \sqrt{p^{(n)}}=p \implies b\in R\setminus p$.\\
+	We have $abx\in p^n$ with $bx\in R\setminus p.So,\ a\in p^{(n)}$.\ Hence, $p^{(n)}$ is $p-$ primary.\end{proof} \qed \end{lemma}
+	\begin{lemma} $p^{(n)}R_p=p^nR_p$.
+    \begin{proof}
+	Since $p^n\subseteq p^{(n)}\subseteq p$ it implies that $p^nR_p\subseteq p^{(n)}R_p$\\
+	To show: $p^{(n)}R_p\subseteq p^nR_p$\\
+	Let $\frac{b}{s}\in p^{(n)}R_p$.
+	Now $b\in p^{(n)}$ implies $bc\in p^n$ for some $c\in R\setminus p$.\ Therefore,
+	 $\frac{b}{s}=\frac{bc}{sc}\in p^nR_p$ and 
+	 $p^{(n)}R_p\subseteq p^nR_p$.
+	Thus,\\ $p^{(n)}R_p=p^nR_p$. \end{proof} \qed \end{lemma}
+	\begin{theorem}\thlabel{Correspondence theorem}
+		Primes ideals of $R_p$ are in one to one correspondence with prime ideal $I$ in $R$ such that $I\subset p$.
+		\begin{proof} Proposition 2.6(c) and example 6.8[p.55] in \cite{Gathmann}.
+	
+	\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		Any minimal prime ideal of $R$ is contained in the set of zero divisors of $R$.
+	\begin{proof} Let $p$ be minimal prime ideal of $R$.Let $S=R\backslash p$.Then $pR_p$ is unique maximal ideal as well as unique prime ideal of $R_p$.Therefore nilradical of $R_p=pR_p$ and so element of $pR_p$ is nilpotent.Let $a\neq 0$ and $\frac{a}{b}\in pR_p$ then $(\frac{a}{b})^n=0$.\ It implies $\frac{a^n}{b^n}=\frac{0}{1}$ and hence $u(a^n\cdot 1-0\cdot b)=0$ for some $u\neq 0\in S$.\ Therefore $u\cdot a^n=0$ with $u\neq 0$.If $n$ is minimal we have $u\cdot a^{n-1}\neq 0$.Hence, $a$ is $a$ zero divisor.
+
+\end{proof}
+\end{theorem} 
+	\begin{theorem}\thlabel{KPID}[Krull's Principal ideal theorem]
+		Let R be\\ Noetherian ring.If $x\in R$ be non-zero and non-unit and $P$ is minimal among prime ideals containing $(x)$, then codim$(P)\leq 1.$
+	\begin{proof}
+	Let $x\in R$ and $P$ be the minimal prime ideal containing $(x)$. We show that if $Q\subsetneq P$ is prime then dim$R_Q=0$ and thus codim$(P)\leq 0$.\\
+	From \thref{Correspondence theorem} we have Codim$(P)=$dim$(R_P)$. Let $S=R\setminus P$ and $x\in P$ then $PR_P$ contains $\frac{x}{1}$.Suppose there is another prime ideal in $R_P$ containing $\frac{x}{1}$ say $qR_P$ with $q\subset P$ then $\frac{x}{1} \in qR_P$ and it will imply $x\in q$ which is contradiction since $P$ is the minimal prime containing $(x)$ and is unique prime ideal of $R_P$.Hence we have $R_P$ is Noetherian, local ring with $PR_P$ minimal prime ideal over $x$ such that codim$(PR_P)=$codim$(P)$.Therefore without loss of generality assume $R$ is local ring with maximal ideal $P$.\\
+	Now since $P$ is minimal over $(x)$.Prime ideals of $R/(x)$ are prime ideals of $R$ containing $(x)$. i.e.\ in this case $P$. So dim$R/(x)=0$ and $R/(x)$ is Noetherian and by \thref{Artin ring} $R/(x)$ is Artinian.\\
+	Thus from above and \thref{supset} the chain \[(x)+Q\supseteq (x)+Q^{(2)} \supseteq Q^{(3)} \cdots\] stabilizes so there exists $n$ such that $(x)+Q^{(n)}=(x)+Q^{(n+1)}$\\
+	\underline{Claim:} $Q^{(n)}=Q^{(n)}(x)=Q^{(n+1)}.$\\ Hence $Q^{(n)}\subset (x)+Q^{(n+1)}$ and so for $f\in Q^{(n)}$ we have\\ $f=ax+g$ with $g\in Q^{(n+1)}$ it implies $ax=f-g\in Q^{(n)}\subseteq Q$ by \thref{symbolic 1}.\\
+	By \thref{Symbolic Power} $axb\in Q^{(n)}$ for $b\in R\setminus Q$. Also, $x\notin Q$ implies that $xb\in R\setminus Q$ and $a\in Q^{(n)}$. It implies \\ $f\in Q^{(n)}(x)+Q^{(n+1)}$ and $Q^{(n)}\subseteq Q^{(n)}(x)+Q^{(n+1)}$.Also, by \thref{supset} $Q^{(n)}\supseteq Q^{(n+1)}$ implies $Q^{(n)}\supseteq Q^{(n)}(x)+Q^{(n+1)}$ and hence our claim follows.Now,quotienting out both sides by $Q^{(n+1)}$ we get $Q^{(n)}/Q^{(n+1)}=(x)Q^{(n)}/Q^{(n+1)}$.Therefore by \thref{Nakayama} \\ $Q^{(n)}/Q^{(n+1)}=0$ and it implies $Q^{(n)}=Q^{(n+1)}$. \\
+	Let $R_Q$ be the localization at prime ideal $Q$.Then \[Q^nR_Q=\biggl\{\frac{a}{b}| \ a\in Q^n \ \text{and} \ b\in R\backslash Q\ \biggr \}\]It follows from the claim if $x\in Q^nR_Q$ then $x\in Q^{n+1}R_Q$ and we get $Q^nR_Q\subseteq Q^{n+1}R_Q$.So,we have $Q^nR_Q=Q^{n+1}R_Q$\\ i.e.\ $Q^nR_Q=QR_Q\cdot Q^nR_Q$ and by \thref{Nakayama}	\\ $Q^nR_Q=0=(QR_Q)^n$.Since $Q$ is prime ideal we have $QR_Q$ is prime ideal of $R_Q$ which is Artinian ring.Therefore $QR_Q$ is unique maximal ideal that is nilpotent and it will imply $QR_Q$ is unique prime ideal of $R_Q$.So dim$(R_Q)=0=$codim$(Q)$ and \\ codim$(P)\leq1$.
+	
+	 
+	 
+	 
+	 
+	 
+	\end{proof}
+
+	\end{theorem} \newpage
+	\begin{theorem}
+		Let $R$ be Noetherian Domain. Then $R$ is Unique Factorization Domain(UFD) if and only if every height($h$t) one prime ideal is principal.
+		\begin{proof} Suppose $R$ is UFD and $p$ is prime ideal such that \\ $ht(p)=1$.Then $p$ is non-zero prime ideal.Suppose $x\in p$ is non zero and non unit.Then since $R$ is a UFD we have\\ $x=a_1\cdot a_2\cdots a_n\in p$ where $a_i$ are irreducibles of $R$.\ Without loss of generality,\ let $a_1\in p$ then $(a_1)\subseteq p$ and $(a_1)$ is prime ideal.Since $R$ is integral domain $(0)$ is prime ideal and $a_1\neq 0$.Therefore, $ht(a_1)\geq 1$ but $ht(p)=1$.Hence $ht(p)=ht(a_1)$ and $p=(a_1)$.\\
+		Conversely, suppose every prime ideal of $ht$ 1 is principal and since $R$ is Noetherian, every non-zero and non-unit element can be factored into irreducibles.So it is enough to show every irreducible element of $R$ is prime element .Let $a$ be irreducible and $p$ be minimal over $(a)$.So $ht(p)=1$ and $(a)\subseteq p=(y)$ for $y\in p$.Hence $a=yx$ for $x$ is a unit and $y\in(a)$.We get $(a)=(y)$.Therefore $a$ is prime.
+			
+		\end{proof}
+	\end{theorem}
+\begin{theorem}[Hilbert's Nullstellenzats weak form]
+	Let $k$ be algebraically closed field and $f_1,f_2,...,f_n$ be polynomials in $k[X_1,...,X_n]$ then $Z(f_1,...,f_n)=\varnothing$ if and only if there exists $g_i\in k[X_1,...,X_n]$ such that $\sum g_if_i=1$.
+	\begin{proof}
+		Corollary 1.7[p.34] in \cite{Eisenbud1995}.\end{proof}
+\end{theorem}
+\begin{theorem}[Hilbert Basis Theorem]\thlabel{Hilbert basis theorem}
+	If Commutative ring $R$ with $1$ is Noetherian then $R[X_1,\cdots ,X_n]$ is Noetherian.
+	\begin{proof} By induction on n in Theorem 7.5[p.81] from \cite{Atiyah}.
+	\end{proof}
+\end{theorem}
+	\section{Zariski Topologly on Affine Space}\label{Zariski Topology}
+	\begin{definition}:- A subset of $k^n$ is called an Algebraic Set if it is of the form $Z(S)$ where $S\subseteq k[X_1,..,X_n].$\end{definition}
+	\begin{lemma}:
+		$k^n=Z(0)$\end{lemma}
+	Since {0} polynomial will remain zero for any value of $k^n.$\\
+	\begin{lemma}$\varnothing=Z(k[X_1,...,X_n])$\end{lemma}
+	Since $k[X_1,...X_n]$ contains constant polynomials.
+	
+	\begin{lemma} $\displaystyle\bigcup_{k=1}^mZ(S_k)=Z(\prod_{k=1}^m S_k)$
+		\begin{proof} We have
+			$\displaystyle\prod_{k=1}^m(S_k)=\{f_1\cdot \cdot \cdot f_m | f_i\in S_i\} $\\
+			Let $(t_1,...,t_n)\in \displaystyle\bigcup_{k=1}^mZ(S_k)$ then $(t_1,...,t_n)\in Z(S_i)$ for atleast one i.\\ It implies $(t_1,..,t_n) \in Z(S_1 \cdot \cdot \cdot S_m).$ Since the product will vanish even if one polynomial of product vanishes.Hence,
+			
+				\[\displaystyle\bigcup_{k=1}^mZ(S_k) \subseteq Z(\prod_{k=1}^m(S_k))\]
+			Conversely, let $(t_1,...,t_n) \in Z(S_1 \cdot \cdot \cdot S_m)$\\
+			Suppose $(t_1,...,t_n) \notin Z(S_i)$ for every i\\
+			then $\forall i$ $\exists$ $g_i \in S_i$ such that $g_i(t_1,...,t_n) \neq 0.$
+			And we have \\ $g_1 \cdot \cdot \cdot g_m \in S_1 \cdot \cdot \cdot S_m$ but $(g_1 \cdot \cdot \cdot g_m)((t_1,...,t_n)) \neq 0$ which is a contradiction to our assumption.\\ So,
+				\[Z(\prod_{k=1}^m(S_k)) \subseteq \displaystyle\bigcup_{k=1}^m Z(S_k)\] \end{proof}
+	Hence the lemma $\displaystyle\bigcup_{k=1}^mZ(S_k)=Z(\prod_{k=1}^m)$\end{lemma}
+	\noindent
+	\begin{lemma}$\displaystyle \bigcap_{m}Z(S_m)=Z(\bigcup_{m} S_m)$ 
+		\begin{proof}
+			Let $(t_1,...,t_n) \in \displaystyle \bigcap_{m}Z(S_m)$ implies $(t_1,...,t_n) \in Z(S_m)$ for \\every m and so 
+			 $(t_1,...,t_n)$ is the root of every polynomial in $S_m$\\
+			 Hence, $(t_1,...,t_n) \in Z(\bigcup_{m} S_m)$ and
+			
+				 \[\displaystyle \bigcap_{m}Z(S_m) \subseteq Z(\bigcup_{m} S_m)\]
+			Now, Let $(t_1,...,t_n) \in Z(\bigcup_{m} S_m)$\\
+			$\Rightarrow (t_1,...,t_n)$ is the zero of every polynomial $f$ belonging to $(\bigcup\limits_{m} S_m)$ \\  which is same as $(t_1,...,t_n) \in Z(S_m)$ for every $m$.\\ It implies
+			 $(t_1,...,t_n) \in \bigcap_{m} Z(S_m)$\\
+				\[Z(\bigcup\limits_{m} S_m) \subseteq \bigcap_{m}Z(S_m)\]
+		\end{proof}
+Hence the lemma	$ \displaystyle \bigcap_{m}Z(S_m)=Z(\bigcup_{m} S_m)$\end{lemma}
+	The above four Lemma implies $k^n$ becomes a topological space if we declare or define Algebraic Sets to be the Closed sets.This topology is called the Zariski Topologly and $k^n$ along with this topology is called Affine n-space over k and is denoted as $\mathbb{A}_k^n$.
+	
+	
+	\noindent
+	\begin{lemma}$Z(S)=Z((S))$
+	\begin{proof} Let
+		$S\subset K[X_1,...,X_n]$ and  \[(S)=\{\sum\limits_{i=1}^l f_ig_i|f_i\in S \text{and} g_i\in k[X_1,...X_n]\}\]
+		Let $(t_1,...,t_n)\in Z(S) \Rightarrow (t_1,...,t_n)$ is zero of every polynomial of $S$.\ So $(t_1,...,t_n)$ is the zero of $\sum\limits_{i=1}^l f_ig_i$.
+		It will imply that\\ $Z(S)\subseteq Z((S))$.\\
+		Conversely,\ Suppose $(t_1,...,t_n)\in Z((S))$.
+		Then we have \\ $f_i\in S\subset(S)$.Therefore
+		 $f_i(t_1,...,t_n)=0$         $\forall  i$ and \\
+		 $(t_1,...,t_n)\in Z(S)$.Hence
+		$Z((S))\subseteq Z(S)$.
+	\end{proof}
+\end{lemma}
+\noindent
+	$\bullet$ \ Until now we have worked with sets in polynomial ring in n indeterminates. But the limitation with sets is we can't do Algebra with them.Subrings contain $1$ so Subrings are also not an option.
+	\textbf{Another sets of object with which we can do Algebra are Ideals without units}.\\
+	$\bullet$ \ Problem with Ideals or Ideals generated by set will contain infinitely many polynomials.So finding the zero locus may prove to be difficult task.This problem is addressed by \thref{Hilbert basis theorem}.
+	By definition a Commutative ring with unity Noetherian if every ideal is finitely generated.\\
+	In our case, we are considering polynomial rings over Algebraically closed field. So $k[X_1,...,X_n]$ is Noetherian.\\
+	If $Z(S)\neq \varnothing $,then even if S is an infinite subset,$(S)=(f_1,f_2,...f_n)$ for some $f_i\in S$ by \thref{Hilbert basis theorem}.\\
+	Therefore $Z(S)=Z((S))=Z(f_1,...,f_n)$.
+	By previous Lemma 3.5 we have the following dictionary
+	\vspace{1cm}
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c c c}
+			\hline
+			Geometric side&amp; &amp; Commutative Algebraic side\\
+			\hline
+			$\mathbb{A}_k^n$&amp; $\leftrightarrow $ &amp; $k[X_1,...,X_n]$\\
+			$\cup$&amp; &amp;$\cup$\\
+			$F$&amp;$\xleftarrow{Z()}$&amp;$(S)\supset S$\\
+			$T$&amp;$\xrightarrow{I()}$&amp;$S$\\
+		\end{tabular}
+	\end{table}
+	
+	\noindent \begin{definition}\thlabel{I(T)}$T\subset \mathbb{A}_{k}^n$ and
+	I$(T)$ is ideal corresponding to $T$\\
+	\noindent We define, I$(T)$=$\{f\in k[X_1,...,X_n] \ | \ f(t)=0$ \
+	$\forall t$ $\in T\}$\end{definition}
+	I$(\varnothing)=k[X_1,...,X_n]$.It is vacuous truth.
+	
+	\begin{lemma}
+	If $S_1\subset S_2$ then $Z(S_1)\supset Z(S_2)$.\begin{proof} Proof follows from the \thref{Z(S)}.\end{proof} \end{lemma}
+\begin{lemma}
+	If $T_1\subset T_2$ then I$(T_1)\supset$ I$(T_2)$
+\begin{proof} Proof follows from the \thref{I(T)}.\end{proof} \end{lemma}
+	\begin{lemma}
+	
+	$Z($I$(T))=\overline{T}$
+	\begin{proof}
+		Let,$(t_1,...,t_n)\in T$.Then for any $f\in$ I$(T)$,$f(t_1,...,t_n)=0$\\
+		$(t_1,...,t_n)$ is the common zero $\forall$ f $\in$ I$(T)$.\\
+		$\implies$ \ $(t_1,...,t_n) \in Z($I$(T))$
+		$\implies \ T\subset Z($I$(T))$\\
+		If $T\subset F$ and $F$ is closed it will follow that $F=Z(S)$ for some ideal $S$.\ And I$(T)\supset$ I$(Z(S))\supset S$\\
+		$\implies$ I$(T)\supset S$ \ $\implies Z($I$(T))\subset Z(S)=F$.\ Therefore for any closed set $F$ we've that $T \subset Z($I$(T)) \subset F$.\ So $Z($I$(T))$ is the smallest closed set containing $T$ and $Z(\textnormal{I}(T))=\overline{T}$.\end{proof} \end{lemma} \newpage
+	\begin{lemma}\thlabel{3.9}
+	I$(Z(S))=\sqrt{S}$
+	\begin{proof}
+		Here $S$ is the ideal of $k[X_1,...,X_n].$ If $f\in \sqrt{S}$ then\\ $f^m \in S$ for some $m$ $\implies f^m$ vanishes on $Z(S)$ $\implies f$ vanishes on $Z(S)$.Therefore, $\sqrt{S}\subset \textnormal{I}(Z(S))$.\\
+		Conversely, if $f \in$ I$(Z(S))$ i.e. $f$ vanishes on $Z(S))$ then $f^m \in S$ for some positive $m$,\ because of Hilbert's Nullstellenzats which states that if $k$ is Algebraically closed field and $S\subset k[X_1,...,X_n]$ is a proper ideal then I$(Z(S))\subset \sqrt{S} $ and $\textnormal{I}(Z(S))=\sqrt{S}$. \end{proof} \end{lemma}
+	\begin{lemma}\thlabel{3.10}$Z($I$(Z(S)))=Z(S)$
+	\begin{proof} $S$ is ideal.
+	$Z(S) \subseteq Z($I$(Z(S)))$ and $S \subseteq \sqrt{S} \subseteq$ I$(Z(S))$ and $ Z(S) \supseteq Z($I$(Z(S))$. \end{proof} \end{lemma} 
+	By \thref{3.9} and \thref{3.10} we have for ideal $S$,\\ $Z($I$(Z(S)))=Z(S)$ and it implies $\ Z(\sqrt{S})=Z(S)$.\\
+	In general, for $S \subseteq \sqrt{S}$ we have $Z(S)=Z(\sqrt{S})$ and $\sqrt{S}=\sqrt{\sqrt{S}}$ i.e. $\sqrt{S}$ is radical ideal.
+	So to get bijective correspondence we consider radical ideals:-
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c c c}
+			\hline
+			Geometric side&amp; &amp; Commutative Algebraic side\\
+			\hline
+			closed subsets of $\mathbb{A}_{k}^n$ &amp; $\leftrightarrow$ &amp; radical ideals of $k[X_1,...,X_n]$\\
+		\end{tabular}
+	\end{table}
+	\noindent
+	\begin{remark}
+	$Z(S_1)=Z(S_2) \Leftrightarrow \sqrt{S_1}=\sqrt{S_2}$ for ideals $S_1$ and $S_2$
+	\begin{proof}
+		Suppose, $\sqrt{S_1}=\sqrt{S_2} \implies Z(\sqrt{S_1})=Z(\sqrt{S_2})$.It implies $Z(S_1)=Z(S_2)$ from above lemma 3.10\\
+		Conversely,$Z(S_1)=Z(S_2)$ implies I$(Z(S_1))=$I$(Z(S_2))$.Therefore by \thref{3.9} we have $\sqrt{S_1}= \sqrt{S_2}$.
+	\end{proof} \end{remark}
+	\begin{definition}[Irreducibility]
+		A subset $Y$ of a topological space is called irreducible if we cannot write $Y=Y_1 \cup Y_2$ where $Y_1,\ Y_2$ are proper closed non-empty subset of $Y$.
+	\end{definition}
+	$\bullet$ Irreducibility $\implies$ Connectedness\\
+	Converse is not true.
+	\begin{example}
+		$[0,1]$ in $\mathbb{R}$ with usual topology is connected but\\ $[0,1]=[0,0.8]\cup[0.2,1]$
+	\end{example}
+	\begin{proposition}
+	If $Y$ is irreducible then $\overline{Y}$ is irreducible.
+	\begin{proof}
+		If $\overline{Y}= Y_{1} \cup Y_{2}$ where $Y_{1}$ and $Y_{2}$ are closed  in $\overline{Y}$ then\\ $Y=\overline{Y}\cap Y=(Y_{1}\cap Y)\cup (Y_{2} \cap Y).$
+	\end{proof}\end{proposition}
+	\begin{proposition}If $Y$ is irreducible then every open subset of $Y$ is irreducible and dense in $Y$.
+	\begin{proof}
+		We've $Y$ is irreducible and let $X$ be open subset of $Y$ which is not dense then $\overline{X}\neq Y$ and $Y=X^{c} \cup \overline{X}$ and it is a contradiction since $Y$ is irreducible.
+		We now prove $X$ is irreducible.
+		If $X=U \cup W$, where $U$ and $W$ are closed set in $X$.
+		Then we show that $X=U$ or $X=W$.
+		Since $X$ is open subset of $Y$ and hence dense we've $Y=\overline{X}=\overline{U} \cup \overline{W}$.
+		It implies $Y=\overline{U}$ or $Y=\overline{W}$.
+		Without loss of generality assume $Y=\overline{U}$ and 
+		$\overline{U}$ in $X$ is $\overline{U}\cap X$.
+		Also, $U$ closure in $X$ is $U$ since $U$ is closed in $X$.
+		Hence,\ $U=\overline{U}\cap X=Y\cap X=X$.
+	\end{proof} \end{proposition}
+	\begin{proposition}Any two open subsets of irreducible space $Y$ intersect.
+	\begin{proof}
+		Let $X_1$ and $X_2$ be two open subset with $X_1 \cap X_2$=$\varnothing$
+		Then $X_{1}^c \cup X_{2}^c=Y$ which is a contradiction.\\
+		This is non-Hausdorff characterization of irreducible space.\end{proof} \end{proposition}
+	\begin{definition}[Affine Variety and quasi Affine variety]
+		An irreducible closed subset of $\mathbb{A}_{k}^n$ is called an Affine Variety and open subset of an Affine variety is called quasi Affine variety.\end{definition}
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c c c}
+			\hline
+			Geometric side&amp; &amp; Commutative Algebraic side\\
+			\hline
+			closed subsets of $\mathbb{A}_{k}^n$ &amp; $\leftrightarrow$ &amp; radical ideals of $k[X_1,...,X_n]$\\
+			Irreducible closed subsets &amp; $\leftrightarrow$ &amp; Prime ideals\\
+			Points of $\mathbb{A}_{k}^n$ &amp; $\leftrightarrow$ &amp; Maximal ideals\\
+		\end{tabular}
+	\end{table}
+	Now, We prove that irreducible closed subsets corresponds to prime ideal\\
+	\begin{theorem}
+		If $I\subset k[X_1,...,X_n]$ is an ideal then $Z(I)\subset \mathbb{A}_{k}^n$ is irreducible if and only if $\sqrt{I}$ is prime.\end{theorem}
+	\begin{proof}
+		Suppose, $\sqrt{I}$ is prime.\\
+		To show $Z(I)$ is irreducible. We know $Z(I)=Z(\sqrt{I})$.
+		Suppose $Z(I)=Y_1 \cup Y_2$ where $Y_1, Y_2$ are closed subset of $Z(I)$ with $Y_1$ proper subset of $Z(I)$.Then we've $Y_1, Y_2$ are closed in $\mathbb{A}_{k}^n$\\
+		$\implies Y_1=Z(I_1)\ and \ Y_2=Z(I_2)$ where $I_1$ and $I_2$ are ideals in $k[X_1,...,X_n]$ \\
+		Now, $Z(\sqrt{I})=Z(I)=Y_1\cup Y_2=Z(I_1)\cup Z(I_2)=Z(I_1I_2)$.\ Hence, 
+		I $(Z(\sqrt{I}))$=I $(Z(I_1I_2))$\\
+		$\implies \sqrt{\sqrt{I}}=\sqrt{I_1I_2} \implies \sqrt{I_1}=\sqrt{I_1I_2} \supset I_1I_2$\\
+		$\implies I_1 \subset \sqrt{I} or I_2 \subset \sqrt{I}$\\
+		$\implies Z(\sqrt{I}) \subset Z(I_1)=Y_1$ or $Z(\sqrt{I}) \subset  Z(I_2)=Y_2$.\\
+		But $Y_1$ is proper subset of $Z(I_1)$.
+		Therefore,\ $Z(I) \subset Y_2$ and $Z(I)$ is irreducible.\\
+		Conversely, assume $Z(I)$ is irreducible.\\
+		To show $\sqrt{I}$ is prime.\\
+		So let $fg \in \sqrt{I}$\\
+		$\implies (fg) \subset \sqrt{I}$ \\  $\implies Z(fg) \supset Z(\sqrt{I})$ \\ $\implies Z(f) \cup Z(g) \supset Z(\sqrt{I})$ \\ $\implies Z(\sqrt{I})=\bigl(Z(f) \cap Z(\sqrt{I})\bigr) \cup \bigl(Z(g) \cap Z(\sqrt{I})\bigr)$ \\
+		$\implies Z(I)$= $\bigl(\underbrace{Z \left( f \right) \cap Z \bigl( \sqrt{I} \bigr)}_{Y_1} \bigr)$ $\cup$ $\bigl(\underbrace{Z \left( g \right) \cap Z \bigl( \sqrt{I} \bigr)}_{Y_2} \bigr)$\\
+		$\because Z(I)=Z(\sqrt{I})$ is irreducible and  $Y_1,\ Y_2$ are closed sets, Assume WLOG $Y_1=\varnothing$ then $Z(\sqrt{I})=Z(g) \cap Z(\sqrt{I})$\\
+		$\implies Z(\sqrt{I}) \subset Z(g)$\\
+		$\implies$ I$(Z(\sqrt{I}))$ $\supset$ I$(Z(g))$=I$(Z((g)))$ \\
+		$\implies \sqrt{\sqrt{I}}=\sqrt{I} \supset \sqrt{(g)}$\\
+		$\implies g \in \sqrt{I}$\\
+		Assume both $Y_1 \ and \ Y_2$ are non-empty. Suppose $Y_1$ is proper subset of $Z(\sqrt{I})$ then $Y_2=Z(\sqrt{I})  \ and \ g \in \sqrt{I}$. Similarly $Y_2$ is proper subset of $Z(\sqrt{I})$ $\implies f \in \sqrt{I}$
+	\end{proof}
+
+	\begin{theorem}[Hilbert's Nullstellenzats weak form]
+		Let k be an algebraically closed field. Then the maximal ideals of $k[X_1,...,X_n]$ are exactly of the form $(X_1-a_1,...,X_n-a_n)$, for $a_i \in k$
+	\end{theorem}
+	So every polynomial corresponds to a point in $\mathbb{A}_{k}^n$\\
+	\begin{align*}
+	 Z((X_1-a_1,...,X_n-a_n))&amp;=Z(X_1-a_1) \cap ... \cap Z(X_n-a_n)\\
+	 &amp;=(a_1,...,a_n) \end{align*}
+	I$((a_1,...,a_n))$ and contains $(X_1-a_1,...,X_n-a_n)$ which is maximal ideal.So I$((a_1,...,a_n))=(X_1-a_1,...,X_n-a_n)$.
+	\begin{example}[Zariski Topology on $\mathbb{A}_{k}^1$]
+	$\mathbb{A}_{k}^1$ is $k$ along with Zariski Topologly.\\
+	Irreducible closed subset of $\mathbb{A}_{k}^1$ are of the form $Z(p)$ where\\ $p\subset k[X_1]$ is prime ideal.
+	Since $k$ is field $k[X_1]$ is P.I.D and in P.I.D every prime ideal is (0) or maximal ideal. So $Z(p)$ corresponds to $\mathbb{A}_{k}^1$ or $Z(p)$ is a point $a_1\in \mathbb{A}_{k}^1$.\\
+	Let $I\properideal k[X_1]$, $I=(f)$ for $f\in I$.\ 
+	Since $k$ is Algebraically closed $f=(X_1-a_1)(X_1-a_2) \cdots (X_1-a_m)$ and \\
+	$\begin{array}{<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="553915">[email&#160;protected]</a>{}l}
+		 Z \left( I \right)=Z \left( \left( f \right) \right)=Z \left( f \right) &amp;{}=  Z \bigl( \left( X_1-a_1 \right) \left( X_1-a_2 \right) \cdots \left( X_1-a_m \right) \bigr) \\
+		&amp;{}=  Z \left( X_1-a_1 \right) \cup Z \left( X_1-a_2 \right) \cdots \cup Z \left( X_1-a_m \right)\\
+		&amp;{}= \{ a_1,a_2,...,a_m \}
+	\end{array}$
+	\par
+	\par
+	\end{example}
+	\begin{example}
+[$\mathbb{A}_{k}^n$ is Affine variety]
+	$\mathbb{A}_{k}^n=Z(\{0\})$ so closed and irreducible because (0) is prime. Similarly, $\mathbb{A}_{k}^n$ is Affine \\ variety.\end{example}
+	\subsection{Noetherian Decomposition}
+	\begin{definition}
+		A topological space X is called Noetherian  if it satisfies Descending Chain Condition for closed sets.\\
+		Given a sequence of closed subsets $Z_1\supsetneq Z_2\supsetneq \cdots $ $\exists \ m\geq 1$  $Z_n=Z_{n+1}=$ for all $n\geq m.$
+	\end{definition}
+	\begin{theorem}
+		Any Affine Variety is a Noetherian Topological space.
+		\begin{proof}
+			Let $Z$ be Affine variety.\\
+			Assume there is infinite chain of $Z_1\supsetneq Z_2\supsetneq Z_3\supsetneq \cdots $ of subvarities of $Z$.Then \\
+			I$(Z_1)\subsetneq$ I$(Z_2)\subsetneq$ I$(Z_3)\subsetneq \cdots$ is infinite chain of ideals in $k[X_1,...X_n]$\\
+			Let I=$\bigcup\limits_{i=1}^{\infty}$ I$(Z_i)$. Then I is an ideal in $k[X_1,...X_n]$ because it is ascending chain of ideals.
+			Because of \thref{Hilbert basis theorem} $k[X_1,...,X_n]$ is Noetherian and I is finitely generated. Let I$=(f_1,...,f_m)$ where $f_1,f_2,...,f_m \in$ I.
+			Then $f_1,...f_m$ are contained in I$(Z_m)$ for some $m$ because of ascending chain of ideals.So
+			I=$(f_1,...f_m)\subset$ I$(Z_m)\subsetneq$ I and we get a contradiction.
+		\end{proof}
+	\end{theorem}
+	So as a result $\mathbb{A}_{k}^n$ is Noetherian.\\
+
+	\begin{lemma}\thlabel{3.11}
+		If $Z\subset Z_1\cup Z_2\cup...\cup Z_s$ where $Z_i's$ are closed and $Z$ is irreducible. Then $Z\subset Z_i$ for some $i$.
+		\begin{proof}
+			$Z=Z\cap (Z_1\cup Z_2\cup...\cup Z_s)$\\
+			$Z=(Z\cap Z_1)\cup (Z\cap Z_2)\cup \cdots \cup (Z\cap Z_m)$\\
+			Each $Z\cap Z_i$ is closed in $Z$. Assume $Z\cap Z_i \neq \varnothing \forall i$\\
+			$Z=\underbrace{\left( Z\cap Z_1 \right)}_{closed}$ $\cup$ $\underbrace{ \bigl( \left( Z\cap Z_2 \right)\cup \cdots \cup \left( Z\cap Z_m \right) \bigr)}_{closed}$
+			And since $Z$ is\\ irreducible we must have $Z=Z\cap Z_i$ for some $i$ i.e. $Z\subset Z_i.$
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Noetherian Decomposition]
+		If $X$ is Noetherian Topological space then any non-empty closed subset of $Y$ of $X$ can be written  as $Y=Y_1\cup Y_2\cup \cdots \cup Y_s$ with $Y_i$ irreducible, closed and non-empty.This decomposition is unique is unique (upto permutation of $Y_i's$) if no $Y_i$ is a subset of $Y_j$ for $i\neq j$
+		\begin{proof}
+			If possible, let $\mathfrak{S}$ be collection of non-empty closed subsets of X,that cannot be written as a finite union of irreducible closed subsets and 
+			$\mathfrak{S}\neq \varnothing$ because $X$ is Noetherian so $\mathfrak{S}$ has minimal element say $Y_0$ and hence $Y_0$ is not irreducible.\\
+			Therefore, $Y_0=Y_{01}\cup Y_{02}$ where $Y_{01}$ and  $Y_{02}$ are proper non-empty closed subsets of  $Y_0.$
+			Since, $Y_{01},Y_{02}\subsetneq Y_0$ $\implies Y_{01},Y_{02} \notin \mathfrak{S}$ because of minimality of $Y_0$.
+			So $Y_{01},Y_{02}$ can be written as a union of finitely many non-empty irreducible closed subset and hence $Y_0$ and that is a ontradiction. \\
+			Thus $\mathfrak{S}=\varnothing$. So any non-empty closed subset can be written as $Y=Y_1\cup Y_2\cup \cdots \cup Y_s$ with $Y_i$ irreducible, closed and non-empty.\\
+			\underline{To show uniqueness:}\\
+			Let $Y=Y_1\cup \cdots \cup Y_s=Y_{1}^{'}\cup \cdots \cup Y_{s'}^{'}$ with every $Y_i,Y_{j}^{'}$ irreducible closed and non-empty and $Y_i\nsubseteq Y_m$ for $i\neq m$ and $Y_{p}^{'}\nsubseteq Y_{n}^{'}$ for $n\neq p$ where $1\leq i,m \leq s$ and  $1\leq n,p \leq s'.$\\
+			This be such that one of $Y_i$'$s$ say $Y_1$ does not equal to any of the $Y_{j}^{'}$.
+			Now, since $Y_1\subset \bigcup\limits_{i=1}^{s}Y_i=\bigcup\limits_{j=1}^{s'}Y_{j}^{'}$.Then by \thref{3.11}, $Y_1\subset Y_{j}^{'}$ for some $j$.
+			Similarly, $Y_{j}^{'}\subset \bigcup\limits_{i=1}^{s}Y_i$ we have $Y_{j}^{'}\subset Y_l$ for some $l$.\\
+			Then $Y_1\subset Y_{j}^{'}\subset Y_l$ $\implies l=1$ i.e.$Y_1=Y_l \implies Y_1=Y_{j}^{'}$ Contradiction.
+		\end{proof}
+	\end{theorem}
+	\subsection{Affine Coordinate Ring}\label{Affine coordinate ring}
+	Futher we explore Affine Coordinate ring.\\
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c c c}
+			\hline
+			Geometric side&amp; &amp; Commutative Algebraic side\\
+			\hline
+			\noindent $\mathbb{A}_{k}^n$
+			&amp;$\xrightarrow{A()}$ &amp; $A(\mathbb{A}_{k}^n)=k[X_1,...,X_n]$\\
+			dim$\mathbb{A}_{k}^n$=n &amp;=&amp; dim$k[X_1,...,X_n]$=n\\ \\
+			Let $X$ be Affine variety,\\
+			$X=Z(p)$ $p$ is prime &amp; $\xrightarrow{A()}$ &amp; $A(X)=A(Z(p))=A(\mathbb{A}_{k}^n)/p=$$A(\mathbb{A}_{k}^n)$/I$(X)$\\
+		\end{tabular}
+	\end{table}\\
+	\underline{\textbf{Verification:}}\\
+	$A(X)=\{ f:X\longrightarrow k$ which are given by polynomials $\}$\\
+	$A(X)$ is a ring because sum of two functions is given sum of two polynomials which is again a polynomial. Similarly product of two functions is given by product of two polynomials which is again a polynomial.\\ \\
+	\underline{\textbf{Map 1:}}\\
+	$\phi:k[X_1,...,X_n] \longrightarrow A(\mathbb{A}_{k}^n)$ defined as \\
+	$f \longmapsto ev(f):A(\mathbb{A}_{k}^n)\rightarrow k$ or $\phi (f)=ev(f)$\\
+	ker$\phi=\{ f \in k[X_1,...,X_n]$ | $ev(f)=0\}$ \\
+	$\implies f=0$ because function that takes value as 0 at infinite number of points is a zero function.\\
+	$\implies$ ker$\phi=\{0\} \implies \phi$ is injective. \\
+	Also,$\phi$ is k-algebra ring homomorphism and surjective by definition.
+	Therefore $k[X_1,...,X_n] \cong A(\mathbb{A}_{k}^n)$\\ \\
+	\underline{\textbf{Map 2:}}\\
+	$\phi:k[X_1,...,X_n] \longrightarrow A(X)=\{$function $X\longrightarrow k\}$ defined as\\
+	$\phi=ev(f)|_X$\\
+	Then $\phi$ is k-algebra ring homomorphism and it is surjective.\\
+	ker$\phi=\{f| \ evf|_X=0\}$\\
+	i.e. $f$ takes value zero at all points of $X$.\\ So,
+	ker$\phi=$I$(X)$ and $k[X_1,...,X_n]/$I$(X)\cong A(X).$ 
+	
+	\begin{definition}
+		For Noetherian topological space,$X$, we define
+		\[\text{dim}(X)=\text{sup}\{n|\exists  \  Z_0\subsetneq Z_1\subsetneq  \cdots \subsetneq Z_n \}\] wher each $Z_i$ is irreducible closed subset. \end{definition}
+	$Z_0$ is non-empty because of irreducibility.
+	If $Y$ is subvariety in $X$.\\
+	Then codim$(Y)=$dim$(X)-$dim$(Y)$
+	\begin{definition}
+		$X$ is called hypersurface if dim$X=n-1$ or codim$(X)=1$\end{definition}
+	Let X be Affine variety of dimension $r$ then 
+	$\exists$ a chain of irreducible closed subsets $Z_0\subsetneq Z_1\subsetneq Z_2\subsetneq \cdots \subsetneq Z_r$ where\\ $Z_0$ corresponds to a point and $Z_r=X$ because if not we could get a bigger chain, contradicting the dimension of $X$.\\
+	$\implies$ I$(X)=$I$(Z_r)\subsetneq$ I$(Z_{r-1})\subsetneq \cdots \subsetneq $I$(Z_0)$ where I$(Z_0)$ is maximal ideal.\\ \\
+	\(  \implies
+	\overunderbraces{&amp;\br{2}{\textnormal{htI}(X)}}
+	{&amp; (0)\subsetneq p_1\subsetneq \cdots \subsetneq &amp; \textnormal{I}(X)$=$ \textnormal{I}(Z_r)&amp; \subsetneq \textnormal{I}(Z_{r-1})\subsetneq \cdots \subsetneq \textnormal{I}(Z_0)}
+	{&amp;&amp;\br{2}{\textnormal{dim}X=\textnormal{dim}A(X)}}
+	\)\\ \\
+	Thus this is the longest chain of prime ideals in $k[X_1,...,X_n]$.\\
+	Therefore $ht(\text{I}(X))+$dim$(X)=$dim$_{krull}k[X_1,...,X_n]=n$
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c c c}
+			\hline
+			Geometric side&amp; &amp; Commutative Algebraic side\\
+			\hline
+			$X$ is hypersurface if dim$X=1$ &amp; $\longleftrightarrow$ &amp;  I$(X)=(f)$ for\\
+			&amp; &amp; $f\in k[X_1,...,X_n]$ and irreducible.\\
+		\end{tabular}
+	\end{table}
+	\begin{proof}
+	Suppose $X$ is geometric hypersurface.\ I$(X)$ is prime because $X$ is Affine variety.From above 
+	$ht(\text{I}(X))+$dim$X=n$ and dim$X=n-1$ so it implies $ht(\text{I}(X))=1$.Since, $k[X_1,...,X_n]$ is UFD and I$(X)$ is prime ideal of height $1$, I$(X)=(f)$ and $f$ is nonconstant and irreducible.\\
+	Conversely, let I$(X)=(f)$ where
+	$f\in$ I$(X)$ and $f$ is irreducible and nonconstant.
+	dim$(X)=n-ht(\text{I}(X))$.
+	Since $k[X_1,...,X_n]$ is UFD and f is irreducible it implies $(f)$ is prime ideal.So, minimal prime ideal over $(f)$ is $(f)$. \\
+	By \thref{KPID} theorem and the fact that (0) is prime ideal, $ht(f)=1$ i.e.\ $ht(\text{I}(X))=1$ and dim$(X)=n-1$.\ And we have that $X$ is geometric hypersurface.\end{proof}
+	\noindent Suppose $f\in k[X_1,...,X_n]$ is non constant  and $f=f_1^{n_1}f_2^{n_2}\cdots  f_m^{n_m}$ be its unique factorization with each $f_i$ is irreducible.\\
+	$Z(f)=Z(f_1)\cup Z(f_2)\cup \cdots \cup Z(f_m)$
+	since $f_i$ are irreducible and $k[X_1,...,X_n]$ is UFD
+	implies $(f_i)$ is prime ideal.
+	Hence,$Z(f_i)$ is irreducible and closed.
+	$Z(f)=Z(f_1)\cup Z(f_2)\cup \cdots \cup Z(f_m)$ is Noetherian decomposition of $f$.
+	Now, each $Z(f_i)$ defines a hypersurface and $Z(f)$ is union of hypersurfaces.
+	\begin{example}
+		Quadratic cone give by $Z(X^2+Y^2-Z^2)\subset \mathbb{A}_k^3$.
+	\end{example}
+\subsection{Open sets in Zariski Topology}
+	Let $U$ be an open set in $\mathbb{A}_k^n$. Further assume $U \neq \emptyset$ and \\ $U \neq \mathbb{A}_k^n$.\ Recall $U$ is irreducible and dense.So let $\mathbb{A}_k^n\setminus U=Z(I)$ for some $I\subset of k[X_1,...,X_n]$.\ Let $I=(f_1,...,f_n)$ then\\ $Z(I)=\bigcap\limits_{i=1}^n Z(f_i)$.Hence $U=\mathbb{A}_k^n\setminus Z(I)=  \bigcup\limits_{i=1}^m\mathbb{A}_k^n\setminus Z(f_i)$.A set of the form $\mathbb{A}_k^n\setminus Z(g)$ is called a basic open set and is denoted by $D(g)$. \\
+	Now we have $D(g)$, a basic open set, is an affine variety in $\mathbb{A}_k^{n+1}$ and $\mathbb{A}_k^2\setminus 0$ is not an affine variety.So the question is given an object in affine space how do we identify if its an Affine Variety.To answer it we give the equivalence of categories.We prove the equivalence in the subsequent section developing necessary theory along the way.
+	\begin{definition} A topological space is called quasi-compact if given any open cover,we find a finite subcover.
+	\end{definition}
+	\begin{proposition} The Zariski Topology is quasi-compact.
+	\end{proposition}
+	The proof follows from next two Lemmas.\\
+	\begin{lemma} Any Noetherian topological space is quasi-compact.
+		\begin{proof} Let $\{U_i|i\in \lambda\}$ be open cover for topological space $X$.\\
+			Let $\mathfrak{S}=\{\bigcup\limits_{i=1}^m U_i|i\in\lambda,i\geq1 \}$.$\mathfrak{S}\neq\emptyset$ since $X$ is non-empty topological space and $X$ has atleast one open subset.Since $X$ is Noetherian $\mathfrak{S}$ has maximal element say $U_2\cup \cdots \cup U_n$.Take $U_1$.Then $U_2 \cup \cdots \cup U_n \cup U_1 \supseteq U_2 \cup \cdots \cup U_n$. This gives $U_1 \subseteq U_2 \cup \cdots \cup U_n$ for $i\in\lambda $ \\
+			So $X=\bigcup\limits_{i}U_i \subseteq U_2 \cup \cdots \cup U_n \subset X$.Therefore $X=U_2 \cup \cdots \cup U_n$.
+		\end{proof}
+	\end{lemma}
+	\begin{lemma} If $X$ is Noetherian topological space and $Y \subset X$ then $Y$ is Noetherian topological space for the induced topology.
+		\begin{proof} Let $T_1 \supseteq  T_2 \supseteq \cdots$ be descending chain of closed sets in Y. Then taking closure in $X$ gives $\overline{T_1} \supseteq \overline{T_2} \cdots$ . Since $X$ is Noetherian we have $\overline{T_i}=\overline{T}_{i+1}$ for $i\geq i_o$\\
+			$T_{i+1}=\overline{T}_{i+1} \cap Y=\overline{T}_i \cap Y= T_i$
+			for $i\geq i_{o}$.
+		\end{proof}
+	\end{lemma}
+	The above two lemmas prove that any subset of Affine space is quasi-compact.
+	
+	\section{Equivalence of Category between Category of Affine Variety and Finitely generated \\ integral domain over $k$}
+	\subsection{Categories and Functor}
+	\begin{definition}[Cateorgy]
+		A category $\mathbf{C}$ can be described as a set $\mathbf{Ob}$, whose members are the objects of $\mathbf{C}$, satisfying the following three conditions:\\
+		$Morphism$\ :For every pair $X,Y$ of objects, there is a $\mathbf{Hom}(X,Y)$ called the $morphisms$ from $X$ to $Y$ in $\mathbf{C}$.If $f$ is a morphism from $X$ to $Y$, then we denote $f:X\longrightarrow Y$.\\
+		$Identity$\ : For every object $X$, there exists a morphism id$_X$ in $\mathbf{Hom}(X,X)$ called identity on $X$.\\
+		$Composition$\ : For every triple $X,Y,Z$ of objects, there exists a partial binary operation from
+		$\mathbf{Hom}(X,Y)\times \mathbf{Hom}(Y,Z)$ to $\mathbf{Hom}(X,Z)$, called the composition of morphisms in $\mathbf{C}$. If $f:X\longrightarrow Y$ and $g:Y\longrightarrow Z$ then the composition of $f$ and $g$ is denoted $g\circ f:X\longrightarrow Z$.\\
+		Further Identity,\ composition and morphisms satify the two axioms:\\
+		$Asscociativity$\ : If $f:X\longrightarrow Y$,\ $g:Y\longrightarrow Z$ and $h:Z\longrightarrow W$,\ then $h\circ (g\circ f)=(h\circ g)\circ f$.\\
+		$Identity$\ : If $X\longrightarrow Y$ then (id$_Y\circ f)=f$ and $(f \circ$ id$_X)=f$.
+		\end{definition}
+	\begin{example}
+		Consider the category $Vec_{k}$ of vector spaces over the given field $k$.Here the objects are $k$-vector spaces and the morphisms are linear trabsformations.
+	\end{example}
+	\begin{example}
+		Category of abelian groups $Ab$, consists of abelian groups as objects and group homomorphisms as the morphisms.
+	\end{example}
+	\begin{definition}[Contravariant Functor]
+		A contravariant functor $F$ from  a category $\mathcal{A}$ to a category $\mathcal{B}$, denoted $F:\mathcal{A}\longrightarrow \mathcal{B}$ is the following data. It is a map of objects $F:\text{obj}(\mathcal{A})\longrightarrow \text{obj}(\mathcal{B})$, and for each $A_1,A_2\in \mathcal{A}$,\ and for morphism $m:A_1\longrightarrow A_2$,\ a morphism $F(m):F(A_2)\longrightarrow F(A_2)$ in $\mathcal{B}$.\ We further require that $F$ preserves identity morphism. i.e.\ for $A\in \mathcal{A}$,\ $F(\text{id}_A)=\text{id}_{F(A)}$,\ and that $F$ preserves composition. i.e.\ $F(m_2\circ m_1)=F(m_1)\circ F(m_2)$.
+		\end{definition}
+	\begin{example}
+		$Vec_{k}$ is the category of $k$ vector spaces, then dual gives contravariant functor $(.)^*:Vec_{k}\longrightarrow Vec_{k}$.\ For each linear transformation between vector spaces,\  $f:V\longrightarrow W$ we have dual transformation
+		$f^*:W^*\longrightarrow V^*$ and $(f\circ g)^*=g^*\circ f^*$.
+	\end{example}
+	\begin{example}
+		There is a contravariant functor $Top\longrightarrow Rings$ taking a topological space $X$ to the ring of real-valued continuous functions on $X$.\ A morphism
+		of topologiacal spaces $X\longrightarrow Y$,\ induces the pullback map from functions on $Y$ to functions on $X$. 
+	\end{example}
+\begin{definition}[Equivalence of Categories]
+	Given two categories $\mathcal{A}$ and $\mathcal{B}$,\ equivalence of categories consists of functors $F:\mathcal{A}\longrightarrow \mathcal{B}$ and $F':\mathcal{B}\longrightarrow \mathcal{A}$ such that $F\circ F'$ is natuarlly isomorphic to the identity functor $\text{id}_{\mathcal{B}}$ on $\mathcal{B}$ and $F'\circ F$ is naturally isomorphic to $\text{id}_{\mathcal{A}}$.
+\end{definition}
+In \ref{Morphism} we will use alternative characterization of equivalence of categories:\\
+A functor $F:\mathcal{A}\longrightarrow \mathcal{B}$ yields equivalence of categories if and only if it simultaneously:\\
+$a$) $Full$ i.e.\ for any two objects $A_1,A_2\in \mathcal{A}$, the map\\ $\mathbf{Hom}_{\mathcal{A}}(A_1,A_2)\longrightarrow \mathbf{Hom}_{\mathcal{B}}(F(A_1),F(A_2))$ induced by $F$ is\\ surjective.\\
+$b$) $Faithful$ i.e.\ for any two objects $A_1,A_2\in \mathcal{A}$, the map\\ $\mathbf{Hom}_{\mathcal{A}}(A_1,A_2)\longrightarrow \mathbf{Hom}_{\mathcal{B}}(F(A_1),F(A_2))$ induced by $F$ is\\ injective.\\
+$c$) $Essentially$ $surjective(dense)$ i.e.\ each object $B_1\in \mathcal{B}$ is \\ isomorphic to an object of the form $F(A_1)$,\ for $A_1 \in \mathcal{A}$. 
+\begin{remark}
+Even though in \ref{Morphism} we use above criteria,\ the inverse functor of functor $A()$ is $MaxSpec$.
+\end{remark}
+\begin{remark}
+ For \ref{Morphism} we get essential surjectivity from \ref{Affine coordinate ring}
+\end{remark}
+	
+	\subsection{Regular functions}
+	\begin{definition}\thlabel{regular function} Let $f$ be a function defined in an open neighborhood of a point $x$ in an affine variety or quasi affine variety then $f$ is regular at $x$ if there exists polynomial $g$ and $h$ with $h\neq 0$ in an open neighborhood of $x$ and $f=\frac{g}{h}$ in that open neighborhood of $x$ and $f$ is regular function if it regular at each point of space.
+	\end{definition}
+	\begin{flushleft}Let $U\subset \mathbb{A}_k^n$ be affine variety or quasi affine variety then \\ $\mathcal{O}(U)=\{f| f$ is regular on $U\}$.
+		$f\in \mathcal{O}(U) \implies$ $f:U \Longrightarrow k$ is a map that is regular at each $x \in U$.So for every $x\in U$ there exists polynomial $g_x$,$h_x\in k[X_1,\cdots ,X_n]$ such that $x\in D(h_x)$ and $f=\frac{g_x}{h_x}$ on an open neighborhood of $x$ contained in $D(h_x)$.
+	\end{flushleft}
+\newpage
+	\begin{lemma}
+		Any regular function is continuous.
+		\begin{proof}
+			Let $f\in \mathcal{O}(U)$ and $f=\frac{g}{h}$ for some polynomials $g$ and $h$.It is enough to prove $f^{-1}$ of closed set is closed.A closed set of $\mathbb{A}_k^1$ is finite set of points since degree of any polynomial is taken to be finite.Also $f^{-1}(\bigcup\limits_{i} A_i)=\bigcup\limits_{i}(A_i)$ so it is enough to show that $f^{-1}(a)=\{p\in Y|f(p)=a\}$ is closed for any $a\in k$.
+			A subset $Z$ of $Y$ is closed if and only if $Y$ can be covered by open subsets $U$ such that $Z\cap U$ is closed in $U$ for every $U$.Let $U$ be the open set on which $f$ can be represented as $f=\frac{g}{h}$ with $g,h\in A(\mathbb{A}_k^n)$ and $h$ is nowhere $0$ on $U$.Then, \[f^{-1}\cap \ U=\biggl\{p\in U|\frac{g(p)}{h(p)}=0 \biggr\}=\{p\in U| p\in Z(g-ah)\}= U\cap Z(g-ah)\]So $f^{-1}(a)$ is closed in $Y$ and the result follows. 
+		\end{proof}
+	\end{lemma}
+	\begin{lemma} If two regular functions are equal on non-empty open subset of irreducible topological space $Y$ then they are equal everywhere.
+		\begin{proof} Any non-empty open subset is dense.Let $f,g\in \mathcal{O}(A)$ and $f=g$ on some $U\subseteq Y$. Then on $U$,$f-g=0 \implies U\subset Z(f-g)$ and $U$ is dense so $Z(f-g)=Y$  and the result follows that $f=g$.
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}\thlabel{exact} $\mathcal{O}(\mathbb{A}_k^n) \simeq A(\mathbb{A}_k^n)$
+		\begin{proof} Define the map as follows
+			\begin{align*}
+				\varphi:A(\mathbb{A}_k^n) &amp;
+				\longrightarrow \mathcal{O}     (\mathbb{A}_k^n) \\
+				g &amp;\longmapsto (g:\mathbb{A} _k^n \longrightarrow k)
+			\end{align*}
+			Every polynomial is regular function and $\varphi$ is $k$-algebra homomorphism.Since $k$ is algebraically closed field $ker\varphi=\{0\}$.So $\varphi$ is injective.\\
+			Let $f:\mathbb{A}_k^n\longrightarrow k$ be a mapping.$\mathbb{A}_k^n$ is open set so there exists finitely many points $x_1,x_2,\cdots ,x_n$ such that $\mathbb{A}_k^n=\bigcup\limits_{i=1}^{m}D(h_{x_i})$ where $h_{x_i}\in k[X_1,\cdots ,X_n]$ and $f=\frac{g_{x_i}}{h_{x_i}}$.So we have,\\ $\emptyset=(\bigcup\limits_{i=1}^{m}D(h_{x_i}))^{c}=\bigcap\limits_{i=1}^{m}Z(h_{x_i})=Z(h_{x_i},\cdots ,h_{x_m})$.It implies \\ $(h_{x_i},\cdots ,h_{x_m})=1$.Then there exists $t_1,\cdots ,t_m\in k[X_1,\cdots ,X_n]$ such that $\sum\limits_{i=1}^{m}t_ih_{x_i}=1$.Therefore, $\sum\limits_{i=1}^{m}(t_ih_{x_i})f=f$ and $\sum\limits_{i=1}^{m}t_ig_{x_i}=f.$
+		\end{proof}
+	\end{theorem}
+	\subsection{Morphisms of affine and quasi affine varieties} \label{Morphism}
+	In this section by varieties we mean affine or quasi affine varieties.
+	\begin{definition}\thlabel{morphism} Let $X$ and $Y$ be varieties.A morphism $\varphi$ from $X$ to $Y$ is continuous map.Further,$\varphi:X\longrightarrow Y$ is such that for all open subsets $V\subset Y$, the pullback of maps via $\varphi$ takes regular function on $V$,namely $\mathcal{O}(V)$ to regular functions on $U$,namely $\mathcal{O}(U)$ where $U=\varphi^{-1}(V)$ is open.
+	\end{definition}
+	\begin{theorem} Mor$_{var}(X,\mathbb{A}_k^1)=\mathcal{O}(X)$
+	\begin{proof}Let $\varphi:X\longrightarrow \mathbb{A}_k^1$ be a morphism.So for any open set $V\subset \mathbb{A}_1^k$ we have $\varphi^{*}:\mathcal{O}(V)\longrightarrow \mathcal{O}(\varphi^{-1}(V))$.Put $V=\mathbb {A}_k^1$.\ Due to \thref{exact} we have $\mathcal{O}(\mathbb{A}_k^1)=A(\mathbb{A}_k^1)=k[X]$.\ So and $\varphi\in \mathcal{O}(X)$.
+		\begin{align*} \varphi^{*}:\mathcal{O}(\mathbb{A}_k^1)&amp;\longrightarrow \mathcal{O}(X) \\
+		 \text{id}_{\mathbb{A}_k^1}&amp;\longmapsto \varphi^{*}(\text{id}_{\mathbb{A}_k^1})=\text{id}_{\mathbb{A}_k^1}\circ \varphi=\varphi
+	\end{align*}
+   \
+	Conversely,\ let $f\in \mathcal{O}(X)$.Then by \thref{morphism} $f$ is continuous.We check $\forall$ open subsets $V\subset \mathbb{A}_k^1$ and every $\psi\in \mathcal{O}(V)$,\ $f^{*}(\psi)=\psi\circ f\in \mathcal{O}(f^{-1}(V))$.\\
+	\underline{claim}: Non-empty open subset of $\mathbb{A}_k^1$ is basic affine open.\\
+	Let $V\subseteq \mathbb{A}_k^1$ be open.Then $V^{c}=\{\lambda_1,\cdots ,\lambda_n \}$ where $\lambda_i\in \mathbb{A}_k^1$. Since $k[X]$ is principal ideal domain, for $g\in k[X]$,\\ $Z(g)=\{\lambda_1,\cdots ,\lambda_n \}=V^{c}$.Thus $V=D(g)$.\ Consider the following diagram
+    \begin{center}
+	\begin{tikzcd}
+		X \arrow[rr, &quot;f&quot;]                                          &amp;   &amp; \mathbb{A_k^1}                                              \\
+		f^{-1}(V) \arrow[u, &quot;open&quot;, hook] \arrow[rd, &quot;f^{*}(\frac{h}{g^m})&quot;'] \arrow[rr, &quot;f&quot;] &amp;   &amp; V=D(g) \arrow[u, &quot;open&quot;', hook] \arrow[ld, &quot;\frac{h}{g^m}&quot;] \\
+		&amp; k &amp;                                                
+	\end{tikzcd} \end{center}
+\underline{claim}:$f^{*}(\frac{h}{g^m})=\frac{h\circ f}{(g\circ f)^m}$ is regular function.\\
+$g\circ f$ does not vanish on $f^{-1}(V)$ because if $g\circ f$ vanishes on $f^{-1}(V)$ then $(g\circ f)(x)=0$ for $x\in f^{-1}(V) \implies g(f(x))=0$ but $f(x)\in D(g)$	where $g$ does not vanish.So it is enough to show that $h\circ f$ and $g\circ f$ are regular function on $f^{-1}(V)$. $f$ is regular so locally $f=\frac{P}{Q}$ where $P,Q\in k[X_1,\cdots ,X_n]$ with $X \hookrightarrow \mathbb{A}_k^n$ and if $h=h(t)=\sum\limits_{i=1}^{m}a_it^i$ then $h\circ f$ is locally $h(\frac{P}{Q})=\sum\limits_{i=1}^{m}\frac{a_iP^i}{Q}$.\ So $h\circ f$ is regular on $f^{-1}(V)$ and $f\in$Mor$_{var}(X,\mathbb{A}_k^1)$.
+\end{proof}
+\end{theorem}
+\newpage
+\begin{lemma}\thlabel{ZLRF} Let $U$ be an open subset of an affine variety $X$ and let $\varphi\in \mathcal{O}(U)$.\ Then $V(\varphi)=\{x\in U|\varphi(x)=0\}$ is closed in $U$.
+\begin{proof} By \thref{regular function} any point $x\in U$ has an open neighborhood $U_x$ in $U$ on which $\varphi=\frac{g_x}{f_x}$ for some $f_x,g_x\in A(X)$ and $U_x=D(f_x)$. So the set,\\
+\begin{align*}
+U_x\textbackslash Z(\varphi)=U_x\textbackslash Z(g_x)&amp;=\{y\in U_x| \ \varphi(y)\neq 0\} \\
+&amp;=\{y\in U_x| \ g_x(y)\neq 0\}\\
+&amp;=\{y\in U_x| \ y\in D(g_x)\}\\
+&amp;=U_x\cap D(g_x) \ \text{which is open in} \ X
+\end{align*}
+So, $\bigcup\limits_{x\in U}U_x\cap D(g_x)$ is open in $X$. Thus $\bigcup\limits_{x\in U} U_x\textbackslash Z(\varphi)=U\textbackslash Z(\varphi)$ is open in $X$.\ This implies $Z(\varphi)$ is closed in $U$ since $U\textbackslash Z(\varphi)\subset U.$
+\end{proof}
+\end{lemma}
+\begin{theorem}\thlabel{main}
+Let $X$ be an affine variety and let $Y$ be any variety. Then there is natural bijection of sets.
+\begin{align*}
+	\text{Mor}_{var}(Y,X) \longleftrightarrow \text{Hom}_{k-algebra}(A(X),\mathcal{O}(Y))
+\end{align*}
+\begin{proof} Define $\alpha$ as 
+	\begin{align*}
+		\alpha:\text{Mor}_{var}(Y,X) &amp;\longleftrightarrow \text{Hom}_{k-algebra}(A(X),\mathcal{O}(Y)) \\
+		\varphi&amp;\longmapsto \varphi^{*}
+	\end{align*}
+Also,\ $\varphi^{*}$ is $k-algebra$ homomorphism since addition, multiplication are defined pointwise.\ We show bijection by proving that $\alpha$ is injective and surjective.\\
+Suppose $\alpha(\varphi_1)=\alpha(\varphi_2)$ then we need to show that $\varphi_1=\varphi_2$.\ Let $\mathbb{A}_k^n$ be affine space with coordinates $T_1,\cdots ,T_n$ and\\ $\varphi_1,\varphi_2\in \text{Mor}_{var}(Y,X)$.\\
+For $y\in Y$ let $\varphi_1(y)=(\lambda_1,\cdots ,\lambda_n)$ and $\varphi_2(y)=(\mu_1,\cdots ,\mu_n)$.Further,by our suppostion we have
+\begin{align*}
+	\varphi_1^{*}=\varphi_2^{*}:A(X)=\mathcal{O}(X)&amp;\longrightarrow \mathcal{O}(Y)\\
+	T_i|_X=\overline{T_i}&amp;\longmapsto \varphi_1^{*}(\overline{T_i})=\varphi_2^{*}(\overline{T_i}) \ \forall i\\ 
+\end{align*}
+i.e.\ $\overline{T_i}\circ \varphi_1=\overline{T_i}\circ \varphi_2 \ \ \forall i$ $\implies$ $\lambda_i=\mu_i$ \ $\forall i$.\ Hence $\varphi_1(y)=\varphi_2(y)$.\\
+Conversely, let	$\zeta\in$ Hom$_{k-algebra}(A(X),\mathcal{O}(Y))$ so\\
+\[\zeta:A(X)\longrightarrow \mathcal{O}(Y), \overline{T_i}\longmapsto f_i\]
+Define, \[\psi:Y\longrightarrow \mathbb{A}_k^n,\ y\mapsto (f_1(y),\cdots ,f_n(y) )\]
+\underline{claim:} $\psi$ maps into $X$.\\
+Let $g\in$ I$(X)\subset k[T_1,\cdots ,T_n]$.Then $\bar{g}=0$ in $A(X)=k[T_1,\cdots ,T_n]/$I$(X)$.\\
+We have,\[\zeta:A(X)\longrightarrow \mathcal{O}(Y)\] is $k-algebra$ ring homomorphism and hence $\zeta(\bar{g})=0$.\\
+i.e.\ $\zeta(g(\overline{T_1},\cdots ,\overline{T_n}))=0\implies g(f_1,\cdots ,f_n)=0$.\ $g(f_1,\cdots ,f_n)$ is polynomial $f_i\in \mathcal{O}(Y) and g(f_1,\cdots ,f_n)=0$. Hence $g(f_1,\cdots ,f_n)$ is zero function.It implies $g(f_1(y),\cdots ,f_n(y))=0$ $\forall y\in Y$. Hence $g(\psi(y))=0$ for arbitrary $g\in$I$(x)$ and $\psi(y)\in Z($I$(X))$.\\
+\underline{To show:} $\psi$ is morphism.\\
+That is we show $\psi$ is continuous and pullback regular function to regular function. We have,\[\psi:Y\longrightarrow X\] is set theoretic map and
+\begin{align*}
+	\alpha(\psi)=\psi^{*}:A(X)&amp;\longrightarrow Map(Y,k)\\
+	h&amp;\longmapsto \psi^{*}=h\circ \psi
+\end{align*}
+So, ($\psi^{*}(h))(y)=(h\circ \psi)(y)=h(\psi(y))=h(f_1(y),\cdots ,f_n(y))$.And for	$y\in Y$,\  $h(f_1(y),\cdots ,f_n(y)) =\zeta(h(\overline{T_1},\cdots ,\overline{T_n}))(y)$ so it implies $\psi^{*}=\zeta$.Further we have $\zeta:A(X)\longrightarrow\mathcal{O}(Y)$.\ Therefore $\psi$ pullsback regular function to regular function.\ Let $Z(J)\subseteq X$ then,\\
+\begin{minipage}[l]{\textwidth-4cm}
+
+\begin{align*}
+ \phi^{-1}(Z(J))=\psi^{-1}(\bigcap\limits_{h\in J}h^{-1}(0))
+ &amp;=\bigcap\limits_{h\in J}\psi^{-1}(h^{-1}(0))\\
+ &amp;=\bigcap\limits_{h\in J}Z(h\circ \psi) 
+\end{align*}
+ 
+\end{minipage}
+\begin{minipage}[c]{3cm}
+	\begin{tikzcd}
+		Y \arrow[rr, &quot;\psi&quot;] \arrow[rrdd, &quot;\psi^{*}(h)&quot;'] &amp;  &amp; X \arrow[dd, &quot;h&quot;] \\
+		&amp;  &amp;                   \\
+		&amp;  &amp; k               
+	\end{tikzcd}
+\end{minipage}\\
+which is closed in $Y$ by \thref{ZLRF}. \ Hence, $f$ is continuous and $\alpha$ is surjective.
+\end{proof}
+\end{theorem} 
+\begin{lemma}\thlabel{composition} 
+If	\begin{tikzcd}
+		Y \arrow[r, &quot;\varphi&quot;] &amp; X_1 \arrow[r, &quot;\psi&quot;] &amp; X_2
+	\end{tikzcd}  is a sequence of morphism of \\ varieties with $X_1$ and $X_2$ affine, \ then $k-algebra \ homomorphism$ $A(X):\longrightarrow \mathcal{O}(Y)$ given by $(\psi\circ \varphi)^{*}$ is same as composition $\varphi^{*}\circ \psi^{*}$.
+\begin{proof} If \begin{tikzcd}
+		Y \arrow[r, &quot;\varphi&quot;] &amp; X_1 \arrow[r, &quot;\psi&quot;] &amp; X_2
+	\end{tikzcd} then
+\begin{tikzcd}
+	Y \arrow[r, &quot;\psi\circ \varphi&quot;] &amp; X_2 \arrow[r, &quot;h&quot;] &amp; k
+\end{tikzcd}\\
+To show that $(\psi\circ \varphi)^{*}=\varphi^{*}\circ \psi^{*}$.
+We have,\\
+\begin{center}
+\begin{tikzcd}
+	Y \arrow[r, &quot;\varphi&quot;] \arrow[rrd, &quot;\varphi^{*}(\psi^{*}(h))&quot;', bend right] &amp; X_1 \arrow[r, &quot;\psi&quot;] \arrow[rd, &quot;\psi^{*}(h)&quot;'] &amp; X_2 \arrow[d, &quot;h&quot;] \\
+	&amp;                                                  &amp; k                 
+\end{tikzcd}\\
+\end{center}
+$(\psi\circ \varphi)^{*}(h)=h\circ (\psi\circ \varphi)=(h\circ \psi)\circ \varphi$ and\\
+$(\varphi^{*}\circ \psi^{*})(h)=\varphi^{*}\circ (\psi^{*}(h))=\varphi^{*}(h\circ \psi)=(h\circ \psi)\circ \varphi$
+\end{proof}
+\end{lemma}
+\newpage
+\begin{proposition} Two Affine Varieties $X_1$ and $X_2$ are isomorphic if and only if $A(X_1)$ and $A(X_2)$ are isomorrphic as $k-algebras$.
+\begin{proof} From \thref{main} 
+	\begin{align*}
+		\alpha:\text{Mor}_{var}(X_1,X_2) &amp;\xlongrightarrow{\sim} \text{Hom}_{k-algebra}(A(X_2),A(X_1))\\
+		\varphi&amp;\longmapsto \alpha(\varphi)=\varphi^{*}
+	\end{align*}
+If $X_1$ and $X_2$ are isomorphic and $\varphi\in$Mor$_{var}(X_1,X_2)$ the there exists $\psi=\varphi^{-1}$ such that $\varphi\circ \psi=$id$_{X_2}$ then since composition is a morphism and from \thref{composition} we have,\[ \text{id}_{X_2}=\varphi\circ \psi \longmapsto (\varphi\circ \psi)^{*}=\psi^{*}\circ \varphi^{*}=\text{id}^*\]
+This proves $\varphi^*$ is an isomorphism.\ Similar argument hold for the converse part.
+\end{proof}
+\end{proposition}
+\nocite{*}
+
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{alpha}
+\bibliography{AG_BIB}
+\end{document}</pre>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
