@@ -1,6 +1,9 @@
 @import "{{ site.theme }}";
 
 header {
+  img {
+    border-radius: 50%;
+  }
 
 display: none;
 
