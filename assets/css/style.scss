@@ -1,10 +1,12 @@
 @import "{{ site.theme }}";
-
 header {
   img {
     border-radius: 50%;
   }
-
-display: none;
-
+  p {
+    text-align: center;
+  }
+  p.view {
+    text-align: left;
+  }
 }
