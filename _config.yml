@@ -1,9 +1,10 @@
 theme: jekyll-theme-minimal
 title: Sahil Karawade
+logo: "/images/My project.jpg"
 description:
   <p align="justify">
   Interested in Algebraic Geometry more specifically Arithmetic Geometry and Moduli Spaces.
   <br><br>
-logo: "/images/My project.jpg?raw=true"
+
 github:
 is_project_page: false
