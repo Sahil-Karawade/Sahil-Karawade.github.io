@@ -1,3 +1,10 @@
+---
+layout: default
+title: Summer School of Langlands Program
+---
+
+
+
 # Notes from Summer School of Langlands Program
 
 ***Remark:*** These notes only contain material I could comprehend during the summer school conducted from 11th July,2022-30th July 2022. Also, for my understanding, I have added extra definitions and examples.
