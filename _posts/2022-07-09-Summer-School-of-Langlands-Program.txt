@@ -1,6 +1,9 @@
 ---
-layout: default
+
+layout: post
+
 title: Summer School of Langlands Program
+
 ---
 
 
