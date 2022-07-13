@@ -1,6 +1,8 @@
 ---  
+
 layout:  post  
-title:  Summer School of Langlands Program 
+title:  Summer School of Langlands Program
+
 ---
 
 
