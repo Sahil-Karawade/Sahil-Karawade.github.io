@@ -1,4 +1,4 @@
-#### Things I learnt from the Conferences
+#### Conferences and Summer School
 
 #### Hartshorne Solution
 
