@@ -12,4 +12,4 @@ Currently studying Hartshorne independently.Solutions to questions which I found
 
 
 ### Notes from Papers and Text
-# I worked during my MSc to prove the equivalence of categories between categories of affine varieties and categories of finitely generated integral domain over an algebraically closed field [Msc Project](https://sahil-karawade.github.io/folder/Sahil%20Karawade(203102010).pdf)
+##### I worked during my MSc to prove the equivalence of categories between categories of affine varieties and categories of finitely generated integral domain over an algebraically closed field [Msc Project](https://sahil-karawade.github.io/folder/Sahil%20Karawade(203102010).pdf)
