@@ -1,6 +1,9 @@
 theme: jekyll-theme-minimal
 title: Sahil Karawade
 logo: "/images/My project (1).jpg"
+author:
+  name: Sahil Karawade
+  email: sahilkarawade99@gmail.com
 
 url: https://sahil-karawade.github.io/
 description:
