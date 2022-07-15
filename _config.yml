@@ -1,12 +1,12 @@
 theme: jekyll-theme-minimal
 title: Sahil Karawade
 logo: "/images/My project (1).jpg"
- 
+email: sahilkarawade99@gmail.com
 description:
   <p align="justify">
   Mainly interested in Algebraic Geometry and allied areas
   <br><br>
-  Email me:  <a href='sahilkarawade99@gmail.com'>
+  
 
 github:
 is_project_page: false
