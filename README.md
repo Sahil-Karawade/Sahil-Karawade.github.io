@@ -1,7 +1,7 @@
 #### Conferences and Summer School
 NOTES from the conferences I have attended.In the notes I have included extra definitions and examples for by understanding. These notes only contain material which I could comprehend.
 
-**Summer School on Langlands Program**
+1)*Summer School on Langlands Program*
 
 a)[Day 1](https://sahil-karawade.github.io/2022-07-09-Summer-School-of-Langlands-Program.html)
 
