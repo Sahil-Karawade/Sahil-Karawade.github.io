@@ -4,7 +4,7 @@ NOTES from the conferences I have attended.In the notes I have included extra de
 
 1. <ins>**Summer School on the Langlands Program**</ins>
 
-   * [Day 1. Shimura Varieties](https://sahil-karawade.github.io/2022-07-09-Summer-School-of-Langlands-Program.html)
+   * [Part 1](https://sahil-karawade.github.io/2022-07-09-Summer-School-of-Langlands-Program.html)
 
 #### <ins> Hartshorne Solution </ins>
 Currently studying Hartshorne independently.Solutions to questions which I found to be important can be found here.
