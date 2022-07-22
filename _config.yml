@@ -3,18 +3,17 @@ title: Sahil Karawade
 logo: "/images/My project (1).jpg"
 author:
   name: Sahil Karawade
-  email: Email me:  <a href='mailto:sahilkarawade99@gmail.com'> `sahilkarawade99@gmail.com` </a>
+  email: sahilkarawade99@gmail.com
 
 url: https://sahil-karawade.github.io/
 description:
   <p align="justify">
   Mainly interested in Algebraic Geometry and allied areas
-  
   <br><br>
 
 url:
     - text: About Me
-      url: /about.html
+      url: /about/
   
 
 github:
