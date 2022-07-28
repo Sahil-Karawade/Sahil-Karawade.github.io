@@ -1,8 +1,9 @@
-Email me:  <a href='mailto:sahilkarawade99@gmail.com'> `sahilkarawade99@gmail.com` </a> / Here is my [CV](https://sahil-karawade.github.io/folder/CV.pdf)
+<ins> Email me:  <a href='mailto:sahilkarawade99@gmail.com'> `sahilkarawade99@gmail.com` </a> </ins>
+<ins> Here is my [CV](https://sahil-karawade.github.io/folder/CV.pdf) </ins>
 
 
 #### <ins> List of Attended Conferences  </ins>
-NOTES from the conferences I have attended.In the notes I have included extra definitions and examples for by understanding. These notes only contain material which I could comprehend.
+NOTES from the conferences I have attended. In the notes, I have included extra definitions and examples for understanding. These notes only contain material which I could comprehend. Also, I am solely responsible for any typos and mistakes in these notes.
 
 1. <ins>**Summer School on the Langlands Program**</ins>
 
