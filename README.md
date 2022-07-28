@@ -1,4 +1,4 @@
-Email me:  <a href='mailto:sahilkarawade99@gmail.com'> `sahilkarawade99@gmail.com` </a> / [CV](https://sahil-karawade.github.io/folder/CV.pdf)
+Email me:  <a href='mailto:sahilkarawade99@gmail.com'> `sahilkarawade99@gmail.com` </a> / Here is my [CV](https://sahil-karawade.github.io/folder/CV.pdf)
 
 
 #### <ins> List of Attended Conferences  </ins>
