@@ -8,11 +8,11 @@ NOTES from the conferences I have attended. In the notes, I have included extra 
 
 Also, I am solely responsible for any typos and mistakes in these notes.
 
-1. <ins>**Summer School on the Langlands Program**</ins>
+1.<ins>**Summer School on the Langlands Program**</ins>
 
    * [Part 1](https://sahil-karawade.github.io/2022-07-09-Summer-School-of-Langlands-Program.html)
 
-2. <ins>**Stanford Algebraic Geometry online seminar series(weekly)**</ins>
+2.<ins>**Stanford Algebraic Geometry online seminar series(weekly)**</ins>
 
      a) Derived category of moduli of vector bundles by Han-Bom Moon.[Notes]
 
@@ -27,7 +27,7 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 
      f) Higher Fano manifolds by Enrica Mazzon.[Notes]
 
-3. <ins>**ETH Algebraic Geometry and Moduli Spaces Zoominar**</ins>
+3.<ins>**ETH Algebraic Geometry and Moduli Spaces Zoominar**</ins>
 
      a) The Chow rings of moduli spaces of elliptic surfaces by Samir Canning.[Notes]
 
@@ -35,7 +35,7 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 
      c) Counting surfaces on Calabi-Yau fourfolds by Younghan Bae.[Notes]
 
-4. <ins>**CARAMS International workshop on Cooperative TU Games using Matrices and Graphs(worth
+4.<ins>**CARAMS International workshop on Cooperative TU Games using Matrices and Graphs(worth
 2 credit points), December 2021.**</ins>  [Certificate](https://sahil-karawade.github.io/folder/CARAMS.pdf)
 
 #### <ins> Hartshorne Solution </ins>
