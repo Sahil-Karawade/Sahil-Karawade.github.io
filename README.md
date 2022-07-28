@@ -14,29 +14,29 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 
 2. <ins>**Stanford Algebraic Geometry online seminar series(weekly)**</ins>
 
-a) Derived category of moduli of vector bundles by Han-Bom Moon.[Notes]
+   a) Derived category of moduli of vector bundles by Han-Bom Moon.[Notes]
 
-b) Line bundles in equivariant elliptic cohomology by Arnav Tripathy.[Notes]
+   b) Line bundles in equivariant elliptic cohomology by Arnav Tripathy.[Notes]
 
-c) Donaldson-Thomas theory of the quantum Fermat quintic by Kai Behrend.[Notes]
+   c) Donaldson-Thomas theory of the quantum Fermat quintic by Kai Behrend.[Notes]
 
-d) Properness of the K-moduli space by Ziquan Zhuang.[Notes]
+   d) Properness of the K-moduli space by Ziquan Zhuang.[Notes]
 
-e) Resolutions of Richardson varieties, stable curves, and dual simplicial spheres by Allen
-Knutson.[Notes]
+   e) Resolutions of Richardson varieties, stable curves, and dual simplicial spheres by Allen
+      Knutson.[Notes]
 
-f) Higher Fano manifolds by Enrica Mazzon.
+   f) Higher Fano manifolds by Enrica Mazzon.[Notes]
 
 3. <ins>**ETH Algebraic Geometry and Moduli Spaces Zoominar**</ins>
 
-a) The Chow rings of moduli spaces of elliptic surfaces by Samir Canning.[Notes]
+   a) The Chow rings of moduli spaces of elliptic surfaces by Samir Canning.[Notes]
 
-b) Gromov-Witten invariants of complete intersections by Lothar G¨ottsche.[Notes]
+   b) Gromov-Witten invariants of complete intersections by Lothar G¨ottsche.[Notes]
 
-c) Counting surfaces on Calabi-Yau fourfolds by Younghan Bae.[Notes]
+   c) Counting surfaces on Calabi-Yau fourfolds by Younghan Bae.[Notes]
 
 4. <ins>**CARAMS International workshop on Cooperative TU Games using Matrices and Graphs(worth
-2 credit points), December 2021.**</ins>[Certificate for credit points](https://sahil-karawade.github.io/folder/CARAMS.pdf)
+2 credit points), December 2021.**</ins>  [Certificate](https://sahil-karawade.github.io/folder/CARAMS.pdf)
 
 #### <ins> Hartshorne Solution </ins>
 Currently studying Hartshorne independently.Solution to selected exercises can be found below.
