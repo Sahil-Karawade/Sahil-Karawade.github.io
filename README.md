@@ -8,7 +8,7 @@ NOTES from the conferences I have attended. In the notes, I have included extra 
 
 Also, I am solely responsible for any typos and mistakes in these notes.
 
-1. <ins>**Summer School on the Langlands Program (11<sup>th</sup> July, 2022 - 31<sup>st</sup> July, 2022)**</ins>
+1. <ins>**Summer School on the Langlands Program (11<sup>th</sup> July, 2022 - 29<sup>th</sup> July, 2022)**</ins>
 
    * [Part 1](https://sahil-karawade.github.io/2022-07-09-Summer-School-of-Langlands-Program.html)
 
