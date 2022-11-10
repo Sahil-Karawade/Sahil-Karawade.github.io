@@ -10,16 +10,12 @@ description:
   <p align="justify">
   Mainly interested in Algebraic Geometry and allied areas
   <br><br>
-
-url:
-    - text: About Me
-      url: /about/
   
 
 github:
 is_project_page: false
 
-url: https://sahil-karawade.github.io
+url: "https://sahil-karawade.github.io"
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
