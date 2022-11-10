@@ -1,1 +1,3 @@
-gem 'jekyll-sitemap'
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-sitemap"
+gem 'jekyll-seo-tag'
