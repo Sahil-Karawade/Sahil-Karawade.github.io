@@ -19,7 +19,7 @@ url:
 github:
 is_project_page: false
 
-url: https://sahil-karawade.github.io/
+url: https://sahil-karawade.github.io
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
