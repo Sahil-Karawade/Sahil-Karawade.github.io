@@ -14,19 +14,19 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 
 2. <ins>**Stanford Algebraic Geometry online seminar series(weekly)**</ins>
 
-     a)Enumerative arithmetic geometry and automorphic forms by Tony Feng. [Notes](https://sahil-karawade.github.io/Enumerative-arithmetic-geometry-and-automorphic-forms.html)
+     a)Enumerative arithmetic geometry and automorphic forms by Tony Feng. [[Notes]](https://sahil-karawade.github.io/Enumerative-arithmetic-geometry-and-automorphic-forms.html)
 
-     b) Non-archimedean Quantum-K theory and Gromov-Witten Invariant by Tony Yue YU. [Notes](https://sahil-karawade.github.io/Non-archimedean-Quantum-K-theory-and-Gromov-Witten-Invariants.html)
+     b) Non-archimedean Quantum-K theory and Gromov-Witten Invariant by Tony Yue YU. [[Notes]](https://sahil-karawade.github.io/Non-archimedean-Quantum-K-theory-and-Gromov-Witten-Invariants.html)
 
      
-     c) Donaldson-Thomas theory of the quantum Fermat quintic by Kai Behrend. [Notes]
+     c) Donaldson-Thomas theory of the quantum Fermat quintic by Kai Behrend. [[Notes]]
 
-     d) Properness of the K-moduli space by Ziquan Zhuang. [Notes](https://sahil-karawade.github.io/Properness-of-K-moduli-Space.html)
+     d) Properness of the K-moduli space by Ziquan Zhuang. [[Notes]](https://sahil-karawade.github.io/Properness-of-K-moduli-Space.html)
 
      e) Resolutions of Richardson varieties, stable curves, and dual simplicial spheres by Allen
       Knutson. [Notes]
       
-     f) Higher Fano manifolds by Enrica Mazzon. [Notes](https://sahil-karawade.github.io/Higer-Fano-Manifolds.html)
+     f) Higher Fano manifolds by Enrica Mazzon. [[Notes]](https://sahil-karawade.github.io/Higer-Fano-Manifolds.html)
 
 
 3. <ins>**ETH Algebraic Geometry and Moduli Spaces Zoominar**</ins>
