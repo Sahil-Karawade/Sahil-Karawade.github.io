@@ -25,6 +25,7 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 
      e) Resolutions of Richardson varieties, stable curves, and dual simplicial spheres by Allen
       Knutson.[Notes]
+      
      f) Higher Fano manifolds by Enrica Mazzon.[Notes](https://sahil-karawade.github.io/Higer-Fano-Manifolds.html)
 
 
