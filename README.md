@@ -48,5 +48,5 @@ Currently studying Hartshorne independently.Solution to selected exercises can b
 #### <ins> Notes from Papers and Text</ins>
 * [Espace etale of a Presheaf](https://sahil-karawade.github.io//folder/Espace%20etale%20of%20a%20Presheaf.pdf)
 
-#### <ins> Masters Project</ins> 
-I worked during my MSc to prove the equivalence of categories between categories of affine varieties and categories of finitely generated integral domain over an algebraically closed field. My Masters project can be found [here](https://sahil-karawade.github.io/folder/Sahil%20Karawade(203102010).pdf).
+#### <ins> Master's Project</ins> 
+My masters project was to prove the category affine varieties is equivalent to the opposite category of the finitely generated integral domain over an algebraically closed field. My Masters project can be found [here](https://sahil-karawade.github.io/folder/Sahil%20Karawade(203102010).pdf).
