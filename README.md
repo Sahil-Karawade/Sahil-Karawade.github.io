@@ -4,8 +4,7 @@
 
 
 #### <ins> List of Attended Conferences  </ins>
-NOTES from the conferences I have attended. In the notes, I have included extra definitions and examples for understanding. These notes only contain material which I could comprehend. 
-
+NOTES from the conferences I have attended. In the notes, I have included extra definitions and examples for my understanding. These notes are based on Prof. Ravi Vakil's [The Three Thing](https://math.stanford.edu/~vakil/threethings.html) advice.
 Also, I am solely responsible for any typos and mistakes in these notes.
 
 1. <ins>**Summer School on the Langlands Program (11<sup>th</sup> July, 2022 - 29<sup>th</sup> July, 2022)**</ins>
