@@ -23,7 +23,7 @@ Also, I am solely responsible for any typos and mistakes in these notes.
      d) Properness of the K-moduli space by Ziquan Zhuang. [[Notes]](https://sahil-karawade.github.io/Properness-of-K-moduli-Space.html)
 
      e) Resolutions of Richardson varieties, stable curves, and dual simplicial spheres by Allen
-      Knutson. [Notes]
+      Knutson. [[Notes]] (https://sahil-karawade.github.io/Resolution-of-Richardson-Varieties,-Stable-curves,-and-dual-simplicial-spheres.html)
       
      f) Higher Fano manifolds by Enrica Mazzon. [[Notes]](https://sahil-karawade.github.io/Higer-Fano-Manifolds.html)
 
