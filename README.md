@@ -29,7 +29,7 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 
 
 3. <ins>**ETH Algebraic Geometry and Moduli Spaces Zoominar**</ins>
-     a) P=W for GLn by Davesh Maulik. [[Notes]]()
+     a) P=W for GLn by Davesh Maulik. [[Notes]](https://sahil-karawade.github.io/P=W-for-GLn.html)
 
      b) The Chow rings of moduli spaces of elliptic surfaces by Samir Canning.[Notes]
 
