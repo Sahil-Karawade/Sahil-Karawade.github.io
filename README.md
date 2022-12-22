@@ -29,12 +29,13 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 
 
 3. <ins>**ETH Algebraic Geometry and Moduli Spaces Zoominar**</ins>
+     a) P=W for GLn by Davesh Maulik. [[Notes]]()
 
-     a) The Chow rings of moduli spaces of elliptic surfaces by Samir Canning.[Notes]
+     b) The Chow rings of moduli spaces of elliptic surfaces by Samir Canning.[Notes]
 
-     b) Gromov-Witten invariants of complete intersections by Lothar G¨ottsche.[Notes]
+     c) Gromov-Witten invariants of complete intersections by Lothar G¨ottsche.[Notes]
 
-     c) Counting surfaces on Calabi-Yau fourfolds by Younghan Bae.[Notes]
+     d) Counting surfaces on Calabi-Yau fourfolds by Younghan Bae.[Notes]
 
 4. <ins>**CARAMS International workshop on Cooperative TU Games using  Matrices and Graphs(worth
 2 credit points), December 2021.**</ins>  [Certificate](https://sahil-karawade.github.io/folder/CARAMS.pdf)
