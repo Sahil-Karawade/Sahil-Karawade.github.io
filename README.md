@@ -34,7 +34,7 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 
      b) The Chow rings of moduli spaces of elliptic surfaces by Samir Canning.[Notes]
 
-     c) Gromov-Witten invariants of complete intersections by Lothar G¨ottsche.[Notes]
+     c) Gromov-Witten invariants of complete intersections by Dimitri Zvonkine. [[Notes]](https://sahil-karawade.github.io/Gromov-Witten-theory-of-complete-intersection.html)
 
      d) Counting surfaces on Calabi-Yau fourfolds by Younghan Bae.[Notes]
 
