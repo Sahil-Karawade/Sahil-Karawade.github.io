@@ -53,3 +53,6 @@ Currently studying Hartshorne independently.Solution to selected exercises can b
 
 #### <ins> Master's Project</ins> 
 My masters project was to prove the category affine varieties is equivalent to the opposite category of the finitely generated integral domain over an algebraically closed field. My Masters project report can be found [here](https://sahil-karawade.github.io/folder/Msc%20Project.pdf).
+
+#### <ins> Course Catalog</ins>
+Bachelor's course catalog can be found [here](https://sahil-karawade.github.io/folder/bachelorscoursecatelog.pdf)
