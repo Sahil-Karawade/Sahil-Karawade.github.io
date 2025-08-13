@@ -45,14 +45,15 @@ Also, I am solely responsible for any typos and mistakes in these notes.
 #### <ins> Hartshorne Solution </ins>
 Currently studying Hartshorne independently.Solution to selected exercises can be found below.
 
-**[Chapter 2](https://sahil-karawade.github.io/Hartshorne-Solution.html):** Solution includes exercises from section 2.1 and 2.2
+**[Chapter 2 solutions](https://sahil-karawade.github.io/Hartshorne-Solution.html):** Solution includes exercises from section 2.1 and 2.2
 
 
 #### <ins> Notes from Papers and Text</ins>
 * [Espace etale of a Presheaf](https://sahil-karawade.github.io//folder/Espace%20etale%20of%20a%20Presheaf.pdf)
 
 #### <ins> Master's Project</ins> 
-My masters project was to prove the category affine varieties is equivalent to the opposite category of the finitely generated integral domain over an algebraically closed field. My Masters project report can be found [here](https://sahil-karawade.github.io/folder/Msc%20Project.pdf).
+My masters project was to prove the category affine varieties is equivalent to the opposite category of the finitely generated integral domain over an algebraically closed field. This is my master's project report:  
+[Master's project report](https://sahil-karawade.github.io/folder/Msc%20Project.pdf).
 
 #### <ins> Course Catalog</ins>
 Bachelor's course catalog can be found [here](https://sahil-karawade.github.io/folder/Bachelor's%20Module%20Handbook.pdf).
