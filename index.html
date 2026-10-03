@@ -1,0 +1,17 @@
+---
+layout: default
+title: Sahil Karawade
+---
+<div class="home-heading">
+  <h1>Sahil Karawade</h1>
+  <ul class="interest-list" aria-label="Interests"><li>Mathematics-Algebraic Geometry</li><li>Audio ML</li><li>Lean Programming</li></ul>
+  <div class="section-links"><a href="/about/">About</a>{% assign cv = site.static_files | where: 'path', '/folder/CV.pdf' | first %}{% if site.show_cv and cv %}<a href="/folder/CV.pdf">CV</a>{% endif %}<a href="/contact/">Contact</a></div>
+</div>
+<section class="home-section"><h2>Mathematics</h2><ul class="link-list">
+<li><a href="/research/#list-of-attended-conferences">List of Attended Conferences</a></li>
+<li><a href="/research/#hartshorne-solution">Hartshorne Solution</a></li>
+<li><a href="/research/#notes-from-papers">Notes from Papers</a></li>
+</ul></section>
+<section class="home-section"><h2>Projects</h2><div>{% include project-list.html %}<div class="section-links"><a href="/projects/">All projects</a><a href="/skills/">Skills &amp; Expertise</a></div></div></section>
+<section class="home-section"><h2>Ventures</h2><div>{% include business-list.html %}</div></section>
+<section class="home-section"><h2>Articles &amp; Guides</h2><div>{% if site.posts.size > 0 %}{% include article-list.html %}{% else %}<a href="/articles/">Articles &amp; Guides</a>{% endif %}</div></section>

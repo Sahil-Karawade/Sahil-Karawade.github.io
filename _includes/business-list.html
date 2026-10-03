@@ -1,0 +1,1 @@
+<ul class="link-list">{% for business in site.data.businesses %}<li><a href="{{ business.url | escape }}">{{ business.name | escape }}</a>{% if business.description %}<p>{{ business.description | escape }}</p>{% endif %}</li>{% endfor %}</ul>

@@ -1,14 +1,1 @@
-
-
-@import "{{ site.theme }}";
-header {
-  img {
-    border-radius: 50%;
-  }
-  p {
-    text-align: center;
-  }
-  p.view {
-    text-align: left;
-  }
-}
+/* Legacy stylesheet URL. */ @import url("/assets/css/site.css");

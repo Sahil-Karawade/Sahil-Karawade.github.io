@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="reading-page">
+  <header class="article-header">
+    <a class="article-back" href="/articles/">Articles &amp; Guides</a>
+    <h1>{{ page.title | escape }}</h1>
+    <div class="article-meta">
+      {% if page.author %}<span>{% if page.author_url %}<a href="{{ page.author_url | escape }}">{{ page.author | escape }}</a>{% else %}{{ page.author | escape }}{% endif %}</span>{% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+      {% if page.reading_time %}<span>{{ page.reading_time | escape }} min read</span>{% endif %}
+    </div>
+    {% if page.medium_url %}<a class="article-source" href="{{ page.medium_url | escape }}">Read on Medium</a>{% endif %}
+  </header>
+  <div class="article-body">{{ content }}</div>
+  <footer class="article-footer"><a href="/articles/">All articles &amp; guides</a></footer>
+</article>

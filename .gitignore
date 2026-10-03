@@ -1,0 +1,6 @@
+.jekyll-cache/
+.jekyll-metadata
+_site/
+tools/rendered/
+tools/site-preview/
+tools/gems/

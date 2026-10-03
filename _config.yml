@@ -1,4 +1,3 @@
-theme: jekyll-theme-minimal
 title: Sahil Karawade
 
 author:
@@ -6,17 +5,27 @@ author:
   email: sahilkarawade99@gmail.com
 
 
-description:
-  <p align="justify">
-  Mainly interested in Algebraic Geometry and allied areas
-  <br><br>
+description: "Sahil Karawade's personal website: mathematics, projects, articles, and businesses."
   
 
 github:
 is_project_page: false
 
 url: "https://sahil-karawade.github.io"
+show_cv: false
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
  - jekyll-sitemap
+
+defaults:
+ - scope:
+     path: ""
+   values:
+     layout: default
+exclude:
+ - README.md
+ - tools
+ - CONTENT-MIGRATION.md
+ - Gemfile
+ - Gemfile.lock

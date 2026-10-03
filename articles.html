@@ -1,0 +1,7 @@
+---
+title: Articles & Guides
+permalink: /articles/
+---
+<h1>Articles &amp; Guides</h1>
+{% if site.posts.size > 0 %}{% include article-list.html %}{% else %}<p class="empty-note">Articles and guides will be published here.</p>{% endif %}
+{% if site.medium_url %}<p><a href="{{ site.medium_url | escape }}">Medium</a></p>{% endif %}
