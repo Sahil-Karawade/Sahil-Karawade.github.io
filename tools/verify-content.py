@@ -13,6 +13,8 @@ for file in root.glob('*.html'):
         continue
     before = BeautifulSoup(old.decode('utf-8'), 'html.parser')
     after = BeautifulSoup(file.read_text(encoding='utf-8'), 'html.parser')
+    for nav in before.select('.notes-nav'):
+        nav.decompose()
     for nav in after.select('.notes-nav'):
         nav.decompose()
     assert re.sub(r'\s+',' ',before.body.get_text()).strip() == re.sub(r'\s+',' ',after.body.get_text()).strip(), file.name+' text changed'
